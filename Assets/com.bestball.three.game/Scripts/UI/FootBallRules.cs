@@ -17,6 +17,9 @@ public class FootBallRules : MonoBehaviour
 
     private void Start()
     {
+        backBtn.gameObject.SetActive(false);
+        detailsGo.SetActive(false);
+
         menuBtn.onClick.AddListener(() =>
         {
             Destroy(gameObject);
@@ -25,6 +28,7 @@ public class FootBallRules : MonoBehaviour
 
         backBtn.onClick.AddListener(() =>
         {
+            backBtn.gameObject.SetActive(false);
             detailsGo.SetActive(false);
 
             buttonsGo.SetActive(true);
@@ -34,6 +38,8 @@ public class FootBallRules : MonoBehaviour
 
     public void OpenRule(FootBallRuleData footBallRuleData)
     {
+        backBtn.gameObject.SetActive(true);
+
         titleText.text = footBallRuleData.title;
         descriptionText.text = footBallRuleData.description;
 
@@ -41,6 +47,5 @@ public class FootBallRules : MonoBehaviour
         cupGo.SetActive(false);
 
         detailsGo.SetActive(true);
-
     }
 }

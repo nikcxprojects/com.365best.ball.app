@@ -1,15 +1,47 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BestPlayers : MonoBehaviour
 {
-    public void OpenPlayer(BestPlayerData bestPlayerData)
+    [SerializeField] Text titleText;
+    [SerializeField] Text descriptionText;
+
+    [Space(10)]
+    [SerializeField] GameObject detailsGo;
+    [SerializeField] GameObject buttonsGo;
+
+    [Space(10)]
+    [SerializeField] Button menuBtn;
+    [SerializeField] Button backBtn;
+
+    private void Start()
     {
-        Destroy(gameObject);
+        backBtn.gameObject.SetActive(false);
+        detailsGo.SetActive(false);
+
+        menuBtn.onClick.AddListener(() =>
+        {
+            Destroy(gameObject);
+            UIManager.OpenWindow(Window.Menu);
+        });
+
+        backBtn.onClick.AddListener(() =>
+        {
+            backBtn.gameObject.SetActive(false);
+
+            detailsGo.SetActive(false);
+            buttonsGo.SetActive(true);
+        });
     }
 
-    public void OpenMenu()
+    public void OpenPlayer(BestPlayerData bestPlayerData)
     {
-        Destroy(gameObject);
-        UIManager.OpenWindow(Window.Menu);
+        backBtn.gameObject.SetActive(true);
+
+        titleText.text = bestPlayerData.title;
+        descriptionText.text = bestPlayerData.description;
+
+        buttonsGo.SetActive(false);
+        detailsGo.SetActive(true);
     }
 }
