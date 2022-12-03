@@ -1,18 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BestPlayers : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void OpenPlayer(BestPlayerData bestPlayerData)
     {
-        
+        Destroy(gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OpenMenu()
     {
-        
+        Destroy(gameObject);
+        UIManager.OpenWindow(Window.Menu);
     }
 }

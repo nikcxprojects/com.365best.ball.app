@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class FootBallRules : MonoBehaviour
 {
-    public void OpenRules(FootBallRulesData footBallRulesData)
+    public void OpenRules(FootBallRuleData footBallRulesData)
     {
         Destroy(gameObject);
     }

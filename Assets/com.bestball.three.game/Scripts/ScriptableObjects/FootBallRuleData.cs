@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu()]
-public class FootBallRulesData : ScriptableObject
+public class FootBallRuleData : ScriptableObject
 {
     public string title;
     [TextArea] public string description;
