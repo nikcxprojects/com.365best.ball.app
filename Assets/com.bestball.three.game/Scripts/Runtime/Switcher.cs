@@ -22,11 +22,11 @@ public class Switcher : MonoBehaviour
     private Color disableColorSwithcer;
     private Color disableColorHandler;
 
-    private const string activeSwither = "#245407";
-    private const string activeHandler = "#4F8A2B";
+    private const string activeSwither = "#1B8966";
+    private const string activeHandler = "#FFDF1B";
 
-    private const string disableSwither = "#414141";
-    private const string disableHandler = "#818181";
+    private const string disableSwither = "#000000";
+    private const string disableHandler = "#00855A";
 
     private AudioSource targetSource;
     [SerializeField] string targetSourceName;
