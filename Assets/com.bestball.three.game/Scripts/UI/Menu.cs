@@ -3,33 +3,22 @@ using UnityEngine;
 
 public class Menu : MonoBehaviour
 {
-    //[SerializeField] Button settingsBtn;
-    //[SerializeField] Button startBtn;
+    [Space(10)]
+    [SerializeField] Button footballRulesBtn;
+    [SerializeField] Button bestPlayersBtn;
 
-    //[Space(10)]
-    //[SerializeField] Image menuBall;
+    private void Start()
+    {
+        footballRulesBtn.onClick.AddListener(() =>
+        {
+            UIManager.OpenWindow(Window.FootballRules);
+            Destroy(gameObject);
+        });
 
-    //[Space(10)]
-    //[SerializeField] Text bestScoreText;
-
-    //private void Start()
-    //{
-    //    settingsBtn.onClick.AddListener(() =>
-    //    {
-    //        UIManager.OpenWindow(Window.Settings);
-    //    });
-
-    //    startBtn.onClick.AddListener(() =>
-    //    {
-    //        Destroy(FindObjectOfType<Menu>().gameObject);
-    //        UIManager.OpenWindow(Window.Game);
-    //    });
-
-    //    UpdateMenuBall();
-    //}
-
-    //public void UpdateMenuBall()
-    //{
-    //    menuBall.sprite = Resources.Load<Sprite>($"Balls/{PlayerPrefs.GetInt(Balls.BallKey)}");
-    //}
+        bestPlayersBtn.onClick.AddListener(() =>
+        {
+            UIManager.OpenWindow(Window.FootballRules);
+            Destroy(gameObject);
+        });
+    }
 }
