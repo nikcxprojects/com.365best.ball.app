@@ -1,17 +1,12 @@
 using UnityEngine;
 
-public class UIManager : MonoBehaviour
+public static class UIManager
 {
-    private void Awake()
-    {
-        OpenWindow(Window.BestPlayers);
-    }
-
     public static void OpenWindow(string window)
     {
         WindowUtility.TryGetWindow(window, (window) =>
         {
-            Instantiate(window, GameObject.Find("main canvas").transform);
+            Object.Instantiate(window, GameObject.Find("main canvas").transform);
         });
     }
 }
