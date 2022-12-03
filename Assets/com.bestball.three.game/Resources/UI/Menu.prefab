@@ -5177,6 +5177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8580d64ab511b774f884ed51ef009157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goldenBoots: {fileID: 6618395287588486965}
   footballRulesBtn: {fileID: 1689564750375025587}
   bestPlayersBtn: {fileID: 8875269098976113199}
   VFX: {fileID: 8564805660653769897}

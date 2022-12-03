@@ -22,8 +22,7 @@ public class FootBallRules : MonoBehaviour
 
         menuBtn.onClick.AddListener(() =>
         {
-            Destroy(gameObject);
-            UIManager.OpenWindow(Window.Menu);
+            UIManager.OpenWindow(Window.Menu, gameObject);
         });
 
         backBtn.onClick.AddListener(() =>

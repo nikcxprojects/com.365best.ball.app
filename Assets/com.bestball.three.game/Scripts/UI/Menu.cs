@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class Menu : MonoBehaviour
 {
+    [SerializeField] Button goldenBoots;
+
     [Space(10)]
     [SerializeField] Button footballRulesBtn;
     [SerializeField] Button bestPlayersBtn;
@@ -14,16 +16,19 @@ public class Menu : MonoBehaviour
     {
         VFX.SetActive(true);
 
+        goldenBoots.onClick.AddListener(() =>
+        {
+            UIManager.OpenWindow(Window.GoldenBootsMenu, gameObject);
+        });
+
         footballRulesBtn.onClick.AddListener(() =>
         {
-            UIManager.OpenWindow(Window.FootballRules);
-            Destroy(gameObject);
+            UIManager.OpenWindow(Window.FootballRules, gameObject);
         });
 
         bestPlayersBtn.onClick.AddListener(() =>
         {
-            UIManager.OpenWindow(Window.BestPlayers);
-            Destroy(gameObject);
+            UIManager.OpenWindow(Window.BestPlayers, gameObject);
         });
     }
 }
