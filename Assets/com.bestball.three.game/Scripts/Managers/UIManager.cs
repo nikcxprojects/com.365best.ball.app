@@ -4,7 +4,7 @@ public class UIManager : MonoBehaviour
 {
     private void Awake()
     {
-        OpenWindow(Window.Menu);
+        OpenWindow(Window.BestPlayers);
     }
 
     public static void OpenWindow(string window)
