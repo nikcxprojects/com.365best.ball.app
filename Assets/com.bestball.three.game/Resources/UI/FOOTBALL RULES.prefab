@@ -84,6 +84,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4204104211475573657}
+  - component: {fileID: 4058336645241360551}
   m_Layer: 0
   m_Name: FOOTBALL RULES
   m_TagString: Untagged
@@ -117,6 +118,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &4058336645241360551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4204104211475573656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c123307f8f4f8c42b03ede517acf8e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4204104211547638994
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,7 +475,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4204104212132719387}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4058336645241360551}
+        m_TargetAssemblyTypeName: FootBallRules, Assembly-CSharp
+        m_MethodName: OpenRules
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 2fe28c6ad534f764d8c465f20abeba89, type: 2}
+          m_ObjectArgumentAssemblyTypeName: FootBallRulesData, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4204104212179072110
 GameObject:
   m_ObjectHideFlags: 0
@@ -582,7 +607,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4204104212179072109}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4058336645241360551}
+        m_TargetAssemblyTypeName: FootBallRules, Assembly-CSharp
+        m_MethodName: OpenRules
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 3925d56a55783ca4eab08ca03e7ae573, type: 2}
+          m_ObjectArgumentAssemblyTypeName: FootBallRulesData, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4204104212357845141
 GameObject:
   m_ObjectHideFlags: 0
@@ -702,7 +739,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4204104212357845224}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4058336645241360551}
+        m_TargetAssemblyTypeName: FootBallRules, Assembly-CSharp
+        m_MethodName: OpenRules
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 0cbc4c1fb9ba78e41a73940d1d20df5b, type: 2}
+          m_ObjectArgumentAssemblyTypeName: FootBallRulesData, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4204104212458372699
 GameObject:
   m_ObjectHideFlags: 0
@@ -978,7 +1027,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4204104212651736862}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4058336645241360551}
+        m_TargetAssemblyTypeName: FootBallRules, Assembly-CSharp
+        m_MethodName: OpenRules
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: afbf1466804e0c548a6589145d4bd867, type: 2}
+          m_ObjectArgumentAssemblyTypeName: FootBallRulesData, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4204104212669336688
 GameObject:
   m_ObjectHideFlags: 0
