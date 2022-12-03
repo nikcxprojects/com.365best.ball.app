@@ -32,10 +32,10 @@ public class FootBallRules : MonoBehaviour
         });
     }
 
-    public void OpenRules(FootBallRuleData footBallRulesData)
+    public void OpenRule(FootBallRuleData footBallRuleData)
     {
-        titleText.text = footBallRulesData.title;
-        descriptionText.text = footBallRulesData.description;
+        titleText.text = footBallRuleData.title;
+        descriptionText.text = footBallRuleData.description;
 
         buttonsGo.SetActive(false);
         cupGo.SetActive(false);
