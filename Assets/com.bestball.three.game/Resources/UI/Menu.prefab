@@ -5154,8 +5154,8 @@ RectTransform:
   m_Children:
   - {fileID: 2210517158139752644}
   - {fileID: 2210517157450598472}
-  - {fileID: 5271047731052684650}
   - {fileID: 8070985804458128922}
+  - {fileID: 5271047731052684650}
   - {fileID: 4223337574113387827}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -5177,6 +5177,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8580d64ab511b774f884ed51ef009157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  footballRulesBtn: {fileID: 1689564750375025587}
+  bestPlayersBtn: {fileID: 8875269098976113199}
+  VFX: {fileID: 8564805660653769897}
 --- !u!1 &2210517158139752643
 GameObject:
   m_ObjectHideFlags: 0
@@ -10354,7 +10357,7 @@ RectTransform:
   - {fileID: 1838492777171962748}
   - {fileID: 8591424049714845205}
   m_Father: {fileID: 2210517158130447159}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -10513,7 +10516,7 @@ RectTransform:
   - {fileID: 3042630083227365070}
   - {fileID: 8462952028234696357}
   m_Father: {fileID: 2210517158130447159}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -10575,7 +10578,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4223337574113387827
 RectTransform:
   m_ObjectHideFlags: 0
