@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class BestPlayers : MonoBehaviour
 {
+    [SerializeField] Image icon;
     [SerializeField] Text titleText;
     [SerializeField] Text descriptionText;
 
@@ -38,6 +39,7 @@ public class BestPlayers : MonoBehaviour
     {
         backBtn.gameObject.SetActive(true);
 
+        icon.sprite = bestPlayerData.icon;
         titleText.text = bestPlayerData.title;
         descriptionText.text = bestPlayerData.description;
 
