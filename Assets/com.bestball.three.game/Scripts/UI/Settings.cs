@@ -6,7 +6,7 @@ public class Settings : MonoBehaviour
     public static bool IsOpened { get; private set; }
 
     [SerializeField] Button backBtn;
-    [SerializeField] Button ballsBtn;
+    [SerializeField] Button menuBtn;
 
     private void OnEnable()
     {
@@ -35,9 +35,9 @@ public class Settings : MonoBehaviour
             Destroy(gameObject);
         });
 
-        ballsBtn.onClick.AddListener(() =>
+        menuBtn.onClick.AddListener(() =>
         {
-            UIManager.OpenWindow(Window.Balls);
+            UIManager.OpenWindow(Window.Menu, gameObject);
         });
     }
 }
