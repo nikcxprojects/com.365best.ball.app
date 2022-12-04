@@ -35,7 +35,7 @@ public class Switcher : MonoBehaviour
 
     private void Awake()
     {
-        Enable = PlayerPrefs.GetInt(targetSourceName) > 0;
+        Enable = !PlayerPrefs.HasKey(targetSourceName) || PlayerPrefs.GetInt(targetSourceName) > 0;
 
         Image = GetComponent<Image>();
         Handler = transform.GetChild(0).GetComponent<Image>();
