@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8153813998207636745}
   m_Layer: 0
-  m_Name: option (1)
+  m_Name: baalls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -288,7 +288,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1170304489542845721}
   m_Layer: 0
-  m_Name: option
+  m_Name: boots
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -716,6 +716,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backBtn: {fileID: 4476918877192429202}
+  options: {fileID: 1440564017119797472}
 --- !u!1 &2617728970918205308
 GameObject:
   m_ObjectHideFlags: 0
@@ -1452,7 +1453,7 @@ GameObject:
   m_Component:
   - component: {fileID: 404082862460160356}
   m_Layer: 0
-  m_Name: option (2)
+  m_Name: t-shirts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -22,6 +22,7 @@ public class GoldenBootsMenu : MonoBehaviour
         settingsBtn.onClick.AddListener(() =>
         {
             UIManager.OpenWindow(Window.Settings);
+            Settings.UpdateOptions(true, true, false);
         });
     }
 
