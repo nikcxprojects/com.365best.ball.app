@@ -11,4 +11,5 @@ public class Window
     public static string GBEquip { get => "GB EQUIP"; }
     public static string Boots { get => "Boots"; }
     public static string Balls { get => "Balls"; }
+    public static string Shirts { get => "Shirts"; }
 }

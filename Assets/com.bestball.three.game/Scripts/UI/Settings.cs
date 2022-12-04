@@ -47,7 +47,7 @@ public class Settings : MonoBehaviour
 
         shirtsBtn.onClick.AddListener(() =>
         {
-            Debug.Log("try open thirts");
+            UIManager.OpenWindow(Window.Shirts);
         });
 
         backBtn.onClick.AddListener(() =>
