@@ -7,6 +7,10 @@ public class GoldenBootsMenu : MonoBehaviour
     [SerializeField] Button equipmentBtn;
     [SerializeField] Button settingsBtn;
 
+    [Space(10)]
+    [SerializeField] Image currentBoots;
+    [SerializeField] Image currentBall;
+
     private void Start()
     {
         startBtn.onClick.AddListener(() =>
