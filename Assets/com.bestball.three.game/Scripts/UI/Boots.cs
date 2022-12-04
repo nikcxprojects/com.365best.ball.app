@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Boots : MonoBehaviour
 {
-    public static string BootsKey { get => "ball"; }
+    public static string BootsKey { get => "boot"; }
 
     [SerializeField] Button backBtn;
 
@@ -13,6 +13,7 @@ public class Boots : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log($"boot: {PlayerPrefs.GetInt(BootsKey)}");
         backBtn.onClick.AddListener(() =>
         {
             Destroy(gameObject);
@@ -20,13 +21,13 @@ public class Boots : MonoBehaviour
 
         hover.transform.position = boots.GetChild(PlayerPrefs.GetInt(BootsKey)).position;
 
-        foreach (Transform ball in boots)
+        foreach (Transform boot in boots)
         {
-            ball.GetComponent<Button>().onClick.AddListener(() =>
+            boot.GetComponent<Button>().onClick.AddListener(() =>
             {
-                hover.position = ball.position;
+                hover.position = boot.position;
 
-                PlayerPrefs.SetInt(BootsKey, ball.GetSiblingIndex());
+                PlayerPrefs.SetInt(BootsKey, boot.GetSiblingIndex());
                 PlayerPrefs.Save();
 
                 //FindObjectOfType<Menu>()?.UpdateMenuBall();
