@@ -142,6 +142,8 @@ GameObject:
   m_Component:
   - component: {fileID: 463650321972060359}
   - component: {fileID: 7521366294374906992}
+  - component: {fileID: 1988037799516273797}
+  - component: {fileID: 5395568594257764112}
   m_Layer: 0
   m_Name: Boots
   m_TagString: Untagged
@@ -185,6 +187,34 @@ MonoBehaviour:
   backBtn: {fileID: 463650320428120293}
   boots: {fileID: 2667992088219834559}
   hover: {fileID: 8271963302287457480}
+--- !u!225 &1988037799516273797
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463650321972060358}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!111 &5395568594257764112
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463650321972060358}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 3b69fa4f4ec19184ca56a1d01c04dc92, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 3b69fa4f4ec19184ca56a1d01c04dc92, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1046562326856931664
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,7 +273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.8235294}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.9607843}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

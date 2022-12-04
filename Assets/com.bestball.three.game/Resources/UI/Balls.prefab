@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.9137255}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.9607843}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -292,6 +292,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1968928266008926968}
   - component: {fileID: 5780192651403090069}
+  - component: {fileID: 1870719764365875604}
+  - component: {fileID: 4064842097649789189}
   m_Layer: 0
   m_Name: Balls
   m_TagString: Untagged
@@ -335,6 +337,34 @@ MonoBehaviour:
   backBtn: {fileID: 1968928264329020122}
   balls: {fileID: 4051730012476711552}
   hover: {fileID: 8068151017184347895}
+--- !u!225 &1870719764365875604
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968928266008926969}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!111 &4064842097649789189
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968928266008926969}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 3b69fa4f4ec19184ca56a1d01c04dc92, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 3b69fa4f4ec19184ca56a1d01c04dc92, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &6404130860446208716
 GameObject:
   m_ObjectHideFlags: 0

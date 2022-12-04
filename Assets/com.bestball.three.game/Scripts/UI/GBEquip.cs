@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class GBEquip : MonoBehaviour
 {
+    public static bool IsEquip { get; private set; }
+
     [Space(10)]
     [SerializeField] Transform bootsHover;
     [SerializeField] Transform ballsHover;
@@ -13,6 +15,16 @@ public class GBEquip : MonoBehaviour
 
     [Space(10)]
     [SerializeField] Button backBtn;
+
+    private void OnEnable()
+    {
+        IsEquip = true;
+    }
+
+    private void OnDestroy()
+    {
+        IsEquip = false;
+    }
 
     private void Start()
     {

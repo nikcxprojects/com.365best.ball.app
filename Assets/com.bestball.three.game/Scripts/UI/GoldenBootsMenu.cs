@@ -22,13 +22,13 @@ public class GoldenBootsMenu : MonoBehaviour
         settingsBtn.onClick.AddListener(() =>
         {
             UIManager.OpenWindow(Window.Settings);
-            Settings.UpdateOptions(true, true, true);
+            Settings.UpdateOptions(true, true, false);
         });
     }
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape) && !Settings.IsOpened)
+        if(Input.GetKeyDown(KeyCode.Escape) && !Settings.IsOpened && !GBEquip.IsEquip)
         {
             UIManager.OpenWindow(Window.Menu, gameObject);
         }
