@@ -1,5 +1,6 @@
 using UnityEngine.UI;
 using UnityEngine;
+using System.Linq;
 
 public class Balls : MonoBehaviour
 {
@@ -29,7 +30,7 @@ public class Balls : MonoBehaviour
                 PlayerPrefs.SetInt(BallKey, ball.GetSiblingIndex());
                 PlayerPrefs.Save();
 
-                //FindObjectOfType<Menu>()?.UpdateMenuBall();
+                FindObjectsOfType<MonoBehaviour>().OfType<IMenu>().FirstOrDefault().UpdateMenuIcons();
             });
         }
     }

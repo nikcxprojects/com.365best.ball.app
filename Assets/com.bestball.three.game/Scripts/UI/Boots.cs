@@ -1,5 +1,6 @@
 using UnityEngine.UI;
 using UnityEngine;
+using System.Linq;
 
 public class Boots : MonoBehaviour
 {
@@ -29,8 +30,7 @@ public class Boots : MonoBehaviour
                 PlayerPrefs.SetInt(BootsKey, boot.GetSiblingIndex());
                 PlayerPrefs.Save();
 
-                IMenu menu = (IMenu)FindObjectOfType(typeof(IMenu));
-                menu.UpdateMenuIcons();
+                FindObjectsOfType<MonoBehaviour>().OfType<IMenu>().FirstOrDefault().UpdateMenuIcons();
             });
         }
     }

@@ -1,5 +1,6 @@
 using UnityEngine.UI;
 using UnityEngine;
+using System.Linq;
 
 public class GBEquip : MonoBehaviour
 {
@@ -39,7 +40,7 @@ public class GBEquip : MonoBehaviour
                 PlayerPrefs.SetInt(Boots.BootsKey, boot.GetSiblingIndex());
                 PlayerPrefs.Save();
 
-                //FindObjectOfType<Menu>()?.UpdateMenuBall();
+                FindObjectsOfType<MonoBehaviour>().OfType<IMenu>().FirstOrDefault().UpdateMenuIcons();
             });
         }
 
@@ -54,7 +55,7 @@ public class GBEquip : MonoBehaviour
                 PlayerPrefs.SetInt(Balls.BallKey, ball.GetSiblingIndex());
                 PlayerPrefs.Save();
 
-                //FindObjectOfType<Menu>()?.UpdateMenuBall();
+                FindObjectsOfType<MonoBehaviour>().OfType<IMenu>().FirstOrDefault().UpdateMenuIcons();
             });
         }
 

@@ -13,8 +13,8 @@ public class GoldenBootsMenu : MonoBehaviour, IMenu
 
     public void UpdateMenuIcons()
     {
-        currentBoots.sprite = Resources.Load<Sprite>($"Balls/{PlayerPrefs.GetInt(Balls.BallKey)}");
-        currentBall.sprite = Resources.Load<Sprite>($"Boots/{PlayerPrefs.GetInt(Boots.BootsKey)}");
+        currentBoots.sprite = Resources.Load<Sprite>($"Boots/{PlayerPrefs.GetInt(Boots.BootsKey)}");
+        currentBall.sprite = Resources.Load<Sprite>($"Balls/{PlayerPrefs.GetInt(Balls.BallKey)}");
     }
 
     private void Start()
@@ -34,6 +34,8 @@ public class GoldenBootsMenu : MonoBehaviour, IMenu
             UIManager.OpenWindow(Window.Settings);
             Settings.UpdateOptions(true, true, false);
         });
+
+        UpdateMenuIcons();
     }
 
     private void Update()

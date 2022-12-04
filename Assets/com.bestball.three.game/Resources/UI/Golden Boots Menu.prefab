@@ -946,3 +946,5 @@ MonoBehaviour:
   startBtn: {fileID: 6932939474883805104}
   equipmentBtn: {fileID: 6932939474966702845}
   settingsBtn: {fileID: 6932939473492686352}
+  currentBoots: {fileID: 6932939473780735735}
+  currentBall: {fileID: 6932939474337423831}
