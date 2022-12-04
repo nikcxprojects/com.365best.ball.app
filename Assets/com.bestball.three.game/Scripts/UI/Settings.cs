@@ -8,6 +8,11 @@ public class Settings : MonoBehaviour
     [SerializeField] Button backBtn;
     private static Transform options;
 
+    [Space(10)]
+    [SerializeField] Button bootsBtn;
+    [SerializeField] Button ballsBtn;
+    [SerializeField] Button shirtsBtn;
+
     private void OnEnable()
     {
         IsOpened = true;
@@ -29,6 +34,21 @@ public class Settings : MonoBehaviour
         {
             Ball.Sleep();
         }
+
+        bootsBtn.onClick.AddListener(() =>
+        {
+            UIManager.OpenWindow(Window.Boots);
+        });
+
+        ballsBtn.onClick.AddListener(() =>
+        {
+            UIManager.OpenWindow(Window.Balls);
+        });
+
+        shirtsBtn.onClick.AddListener(() =>
+        {
+            Debug.Log("try open thirts");
+        });
 
         backBtn.onClick.AddListener(() =>
         {

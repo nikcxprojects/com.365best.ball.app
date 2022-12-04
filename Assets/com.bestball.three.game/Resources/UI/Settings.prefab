@@ -51,7 +51,7 @@ GameObject:
   - component: {fileID: 8038712294707752387}
   - component: {fileID: 824725041912450033}
   m_Layer: 0
-  m_Name: land
+  m_Name: ballsBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 6547690554047889551}
   - component: {fileID: 8638682940528790857}
   m_Layer: 0
-  m_Name: land
+  m_Name: shirtsBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -404,7 +404,7 @@ GameObject:
   - component: {fileID: 1170304491307408032}
   - component: {fileID: 8122185624513642261}
   m_Layer: 0
-  m_Name: land
+  m_Name: bootsBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -716,6 +716,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backBtn: {fileID: 4476918877192429202}
+  bootsBtn: {fileID: 8122185624513642261}
+  ballsBtn: {fileID: 824725041912450033}
+  shirtsBtn: {fileID: 8638682940528790857}
 --- !u!1 &2617728970918205308
 GameObject:
   m_ObjectHideFlags: 0

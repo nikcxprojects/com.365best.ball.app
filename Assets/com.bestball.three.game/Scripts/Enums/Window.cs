@@ -2,7 +2,6 @@ public class Window
 {
     public static string Menu { get => "Menu"; }
     public static string Settings { get => "Settings"; }
-    public static string Balls { get => "Balls"; }
     public static string Game { get => "Game"; }
     public static string Pause { get => "Pause"; }
     public static string GameOver { get => "Game Over"; }
@@ -10,4 +9,6 @@ public class Window
     public static string BestPlayers { get => "BEST PLAYERS"; }
     public static string GoldenBootsMenu { get => "Golden Boots Menu"; }
     public static string GBEquip { get => "GB EQUIP"; }
+    public static string Boots { get => "Boots"; }
+    public static string Balls { get => "Balls"; }
 }
