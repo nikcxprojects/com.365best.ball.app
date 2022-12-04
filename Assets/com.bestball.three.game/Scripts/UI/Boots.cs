@@ -13,7 +13,6 @@ public class Boots : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log($"boot: {PlayerPrefs.GetInt(BootsKey)}");
         backBtn.onClick.AddListener(() =>
         {
             Destroy(gameObject);

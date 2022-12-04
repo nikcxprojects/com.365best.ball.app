@@ -13,7 +13,6 @@ public class Balls : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log($"ball: {PlayerPrefs.GetInt(BallKey)}");
         backBtn.onClick.AddListener(() =>
         {
             Destroy(gameObject);
