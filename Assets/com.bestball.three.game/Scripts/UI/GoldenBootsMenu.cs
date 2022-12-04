@@ -21,7 +21,10 @@ public class GoldenBootsMenu : MonoBehaviour, IMenu
     {
         startBtn.onClick.AddListener(() =>
         {
-            InstantiateUtility.Spawn(Resources.Load<Ball>("ball"), Vector2.zero, Quaternion.identity, null);
+            InstantiateUtility.Spawn<Ball>("ball", Vector2.up * 6, Quaternion.identity, null);
+            InstantiateUtility.Spawn<Player>("boot", Vector2.down * 3.688f, Quaternion.identity, null);
+            InstantiateUtility.Spawn<OverZone>("over zone", Vector2.down * 5, Quaternion.identity, null);
+
             Destroy(gameObject);
         });
 

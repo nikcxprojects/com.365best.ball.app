@@ -7,7 +7,7 @@ public class OverZone : MonoBehaviour
         UIManager.OpenWindow(Window.GameOver);
 
         Destroy(FindObjectOfType<Game>().gameObject);
-        Destroy(FindObjectOfType<Player>().gameObject);
+        //Destroy(FindObjectOfType<Player>().gameObject);
         Destroy(FindObjectOfType<Ball>().gameObject);
     }
 }

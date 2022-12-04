@@ -13,12 +13,12 @@ public class Game : MonoBehaviour
 
     private void OnEnable()
     {
-        Player.OnCollided += OnCollidedEvent;
+        //Player.OnCollided += OnCollidedEvent;
     }
 
     private void OnDestroy()
     {
-        Player.OnCollided -= OnCollidedEvent;
+        //Player.OnCollided -= OnCollidedEvent;
     }
 
     private void OnCollidedEvent()
@@ -41,13 +41,13 @@ public class Game : MonoBehaviour
             UIManager.OpenWindow(Window.Settings);
         });
 
-        Player playerPrefab = Resources.Load<Player>("player");
+        //Player playerPrefab = Resources.Load<Player>("player");
 
         Vector2 position = new Vector2(0, -3.42f);
         Quaternion rotation = Quaternion.Euler(Vector3.zero);
         Transform parent = GameObject.Find("Environment").transform;
 
-        Instantiate(playerPrefab, position, rotation, parent);
+        //Instantiate(playerPrefab, position, rotation, parent);
 
         Ball ballPrefab = Resources.Load<Ball>("ball");
 
