@@ -31,6 +31,8 @@ public class Switcher : MonoBehaviour
     private AudioSource targetSource;
     [SerializeField] string targetSourceName;
 
+    public static bool VibraEnabled { get; private set; }
+
     private void Awake()
     {
         Enable = PlayerPrefs.GetInt(targetSourceName) > 0;
@@ -46,7 +48,7 @@ public class Switcher : MonoBehaviour
         ColorUtility.TryParseHtmlString(disableSwither, out disableColorSwithcer);
         ColorUtility.TryParseHtmlString(disableHandler, out disableColorHandler);
 
-        targetSource = GameObject.Find(targetSourceName).GetComponent<AudioSource>();
+        targetSource = IsVibroOption() ? null : GameObject.Find(targetSourceName).GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -64,7 +66,14 @@ public class Switcher : MonoBehaviour
             StartCoroutine(nameof(Switch));
         });
 
-        targetSource.mute = !Enable;
+        if (targetSource)
+        {
+            targetSource.mute = !Enable;
+        }
+        else
+        {
+            VibraEnabled = Enable;
+        }
 
         Image.color = Enable ? activeColorSwithcer : disableColorSwithcer;
         Handler.color = Enable ? activeColorHandler : disableColorHandler;
@@ -77,6 +86,11 @@ public class Switcher : MonoBehaviour
         Handler.transform.localPosition = v2Target;
     }
 
+    private bool IsVibroOption()
+    {
+        return string.Equals(targetSourceName, "vibration");
+    }
+
     private IEnumerator Switch()
     {
         Enable = !Enable;
@@ -84,7 +98,14 @@ public class Switcher : MonoBehaviour
         PlayerPrefs.SetInt(targetSourceName, Enable ? 1 : 0);
         PlayerPrefs.Save();
 
-        targetSource.mute = !Enable;
+        if (targetSource)
+        {
+            targetSource.mute = !Enable;
+        }
+        else
+        {
+            VibraEnabled = Enable;
+        }
 
         Image.color = Enable ? activeColorSwithcer : disableColorSwithcer;
         Handler.color = Enable ? activeColorHandler : disableColorHandler;
@@ -103,7 +124,6 @@ public class Switcher : MonoBehaviour
         }
 
         Handler.transform.localPosition = v2Target;
-
         et = 0;
     }
 }

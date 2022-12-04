@@ -716,7 +716,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backBtn: {fileID: 4476918877192429202}
-  options: {fileID: 1440564017119797472}
 --- !u!1 &2617728970918205308
 GameObject:
   m_ObjectHideFlags: 0
@@ -2696,7 +2695,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79f0c730d6068a045b8472c52e1cea25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetSourceName: sound
+  targetSourceName: vibration
 --- !u!1 &8936889793728925325
 GameObject:
   m_ObjectHideFlags: 0
