@@ -21,6 +21,7 @@ public class GoldenBootsMenu : MonoBehaviour, IMenu
     {
         startBtn.onClick.AddListener(() =>
         {
+            InstantiateUtility.Spawn(Resources.Load<Ball>("ball"), Vector2.zero, Quaternion.identity, null);
             Destroy(gameObject);
         });
 
@@ -44,10 +45,5 @@ public class GoldenBootsMenu : MonoBehaviour, IMenu
         {
             UIManager.OpenWindow(Window.Menu, gameObject);
         }
-    }
-
-    public void SpawnGame<T>(T prefab) where T : MonoBehaviour
-    {
-        Instantiate(prefab, null);
     }
 }
