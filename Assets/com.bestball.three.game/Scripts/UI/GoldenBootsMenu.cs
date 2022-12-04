@@ -45,4 +45,9 @@ public class GoldenBootsMenu : MonoBehaviour, IMenu
             UIManager.OpenWindow(Window.Menu, gameObject);
         }
     }
+
+    public void SpawnGame<T>(T prefab) where T : MonoBehaviour
+    {
+        Instantiate(prefab, null);
+    }
 }

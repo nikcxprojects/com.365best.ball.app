@@ -1,6 +1,7 @@
 using UnityEngine.UI;
 using UnityEngine;
 using System.Linq;
+using System;
 
 public class GBEquip : MonoBehaviour
 {
