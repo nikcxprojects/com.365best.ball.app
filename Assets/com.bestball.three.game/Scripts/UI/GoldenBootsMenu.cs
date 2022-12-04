@@ -1,7 +1,7 @@
 using UnityEngine.UI;
 using UnityEngine;
 
-public class GoldenBootsMenu : MonoBehaviour
+public class GoldenBootsMenu : MonoBehaviour, IMenu
 {
     [SerializeField] Button startBtn;
     [SerializeField] Button equipmentBtn;
@@ -10,6 +10,12 @@ public class GoldenBootsMenu : MonoBehaviour
     [Space(10)]
     [SerializeField] Image currentBoots;
     [SerializeField] Image currentBall;
+
+    public void UpdateMenuIcons()
+    {
+        currentBoots.sprite = Resources.Load<Sprite>($"Balls/{PlayerPrefs.GetInt(Balls.BallKey)}");
+        currentBall.sprite = Resources.Load<Sprite>($"Boots/{PlayerPrefs.GetInt(Boots.BootsKey)}");
+    }
 
     private void Start()
     {

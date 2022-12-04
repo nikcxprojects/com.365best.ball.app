@@ -29,7 +29,8 @@ public class Boots : MonoBehaviour
                 PlayerPrefs.SetInt(BootsKey, boot.GetSiblingIndex());
                 PlayerPrefs.Save();
 
-                //FindObjectOfType<Menu>()?.UpdateMenuBall();
+                IMenu menu = (IMenu)FindObjectOfType(typeof(IMenu));
+                menu.UpdateMenuIcons();
             });
         }
     }
