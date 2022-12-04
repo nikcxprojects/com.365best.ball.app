@@ -16,7 +16,7 @@ public class GoldenBootsMenu : MonoBehaviour
 
         equipmentBtn.onClick.AddListener(() =>
         {
-            Destroy(gameObject);
+            UIManager.OpenWindow(Window.GBEquip);
         });
 
         settingsBtn.onClick.AddListener(() =>
