@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class GBGame : MonoBehaviour
 {
     private int score;
+    private static Transform land;
 
     [SerializeField] Button pauseBtn;
     [SerializeField] Button settingsBtn;
@@ -47,7 +48,7 @@ public class GBGame : MonoBehaviour
         InstantiateUtility.Spawn<BootPlayer>("boot player", Vector2.down * 3.688f, Quaternion.identity, parent);
         InstantiateUtility.Spawn<OverZone>("over zone", Vector2.down * 5, Quaternion.identity, parent);
 
-        Transform land = Instantiate(Resources.Load<Transform>("Landscapes/GB"), GameObject.Find("main canvas").transform);
+        land = Instantiate(Resources.Load<Transform>("Landscapes/GB"), GameObject.Find("main canvas").transform);
 
         land.SetParent(FindObjectOfType<GBGame>().transform);
         land.SetAsFirstSibling();
@@ -55,11 +56,13 @@ public class GBGame : MonoBehaviour
         BootPlayer.BallRef = ballRef;
     }
 
-    public static void GameOver()
+    public static void GameOver(out GameObject landscape)
     {
         Destroy(FindObjectOfType<GBGame>().gameObject);
         Destroy(FindObjectOfType<BootPlayer>().gameObject);
         Destroy(FindObjectOfType<OverZone>().gameObject);
         Destroy(FindObjectOfType<Ball>().gameObject);
+
+        landscape = land.gameObject;
     }
 }
