@@ -28,7 +28,7 @@ public class BestPenaltyMenu : MonoBehaviour, IMenu
         settingsBtn.onClick.AddListener(() =>
         {
             UIManager.OpenWindow(Window.Settings);
-            Settings.UpdateOptions(true, true, false);
+            Settings.UpdateOptions(false, true, false);
         });
 
         UpdateMenuIcons();
