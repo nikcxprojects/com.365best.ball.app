@@ -23,6 +23,7 @@ public class BallPenalty : MonoBehaviour
 
     private bool EndTravel { get; set; }
     public static Action OnTravelled { get; set; }
+    public static Action OnPressed { get; set; }
 
     private void Awake()
     {
@@ -52,6 +53,7 @@ public class BallPenalty : MonoBehaviour
             return;
         }
 
+        OnPressed?.Invoke();
         Shadow.SetActive(false);
 
         Target.position = new Vector2(Random.Range(-2.21f, 2.21f), Random.Range(-0.5f, 1.72f));

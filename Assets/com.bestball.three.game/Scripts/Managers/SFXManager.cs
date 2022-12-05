@@ -19,6 +19,16 @@ public class SFXManager : MonoBehaviour
 
             sfxSource.PlayOneShot(hitClip);
         };
+
+        BallPenalty.OnPressed += () =>
+        {
+            if (sfxSource.isPlaying)
+            {
+                sfxSource.Stop();
+            }
+
+            sfxSource.PlayOneShot(hitClip);
+        };
     }
 
     public void GameOver()
