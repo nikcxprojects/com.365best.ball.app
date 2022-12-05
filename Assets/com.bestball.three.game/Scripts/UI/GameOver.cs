@@ -4,11 +4,10 @@ using UnityEngine.UI;
 public class GameOver : MonoBehaviour
 {
     [SerializeField] Button restartBtn;
-    private static Transform thisTransform;
 
-    private void Awake()
+    private void OnEnable()
     {
-        thisTransform = transform;
+        gameObject.SetLandscape(LandscapeUtility.GetLandscape(AppManager.CurrentGameType));
     }
 
     private void Start()
@@ -19,10 +18,5 @@ public class GameOver : MonoBehaviour
             UIManager.OpenWindow(Window.GBGame);
             Destroy(gameObject);
         });
-    }
-
-    public static void SetLandscape(Transform landscape)
-    {
-        landscape.SetParent(thisTransform);
     }
 }

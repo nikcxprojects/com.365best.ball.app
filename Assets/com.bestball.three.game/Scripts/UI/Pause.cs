@@ -5,6 +5,11 @@ public class Pause : MonoBehaviour
 {
     [SerializeField] Button resumeBtn;
 
+    private void OnEnable()
+    {
+        gameObject.SetLandscape(LandscapeUtility.GetLandscape(AppManager.CurrentGameType));
+    }
+
     private void Start()
     {
         if (FindObjectOfType<Ball>() != null)

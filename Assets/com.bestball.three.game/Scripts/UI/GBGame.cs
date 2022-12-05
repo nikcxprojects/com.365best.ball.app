@@ -47,7 +47,7 @@ public class GBGame : MonoBehaviour
         InstantiateUtility.Spawn<BootPlayer>("boot player", Vector2.down * 3.688f, Quaternion.identity, parent);
         InstantiateUtility.Spawn<OverZone>("over zone", Vector2.down * 5, Quaternion.identity, parent);
 
-        gameObject.SetLandscape(Resources.Load<GameObject>("Landscapes/GB"));
+        gameObject.SetLandscape(LandscapeUtility.GetLandscape(GameType.GB));
 
         BootPlayer.BallRef = ballRef;
     }

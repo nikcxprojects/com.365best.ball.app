@@ -19,6 +19,7 @@ public class Menu : MonoBehaviour
         goldenBoots.onClick.AddListener(() =>
         {
             UIManager.OpenWindow(Window.GoldenBootsMenu, gameObject);
+            AppManager.CurrentGameType = GameType.GB;
         });
 
         footballRulesBtn.onClick.AddListener(() =>
