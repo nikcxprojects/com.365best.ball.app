@@ -48,6 +48,9 @@ public class BPGame : MonoBehaviour
         });
 
         Transform parent = GameObject.Find("Environment").transform;
+
+        Instantiate(Resources.Load<GameObject>("goal"), Vector2.zero, Quaternion.identity, parent);
+        Instantiate(Resources.Load<GameObject>("place"), Vector2.down * 3.47f, Quaternion.identity, parent);
         InstantiateUtility.Spawn<BallPenalty>("ball penalty", Vector2.zero, Quaternion.identity, parent);
     }
 
@@ -55,5 +58,8 @@ public class BPGame : MonoBehaviour
     {
         Destroy(FindObjectOfType<BPGame>().gameObject);
         Destroy(FindObjectOfType<BallPenalty>().gameObject);
+
+        Destroy(GameObject.Find("goal(Clone)"));
+        Destroy(GameObject.Find("place(Clone)"));
     }
 }
