@@ -5178,6 +5178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goldenBoots: {fileID: 6618395287588486965}
+  bestPenalty: {fileID: 4650560041363049703}
   footballRulesBtn: {fileID: 1689564750375025587}
   bestPlayersBtn: {fileID: 8875269098976113199}
   VFX: {fileID: 8564805660653769897}

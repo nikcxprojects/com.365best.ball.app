@@ -4,6 +4,7 @@ using UnityEngine;
 public class Menu : MonoBehaviour
 {
     [SerializeField] Button goldenBoots;
+    [SerializeField] Button bestPenalty;
 
     [Space(10)]
     [SerializeField] Button footballRulesBtn;
@@ -20,6 +21,12 @@ public class Menu : MonoBehaviour
         {
             UIManager.OpenWindow(Window.GoldenBootsMenu, gameObject);
             AppManager.CurrentGameType = GameType.GB;
+        });
+
+        goldenBoots.onClick.AddListener(() =>
+        {
+            UIManager.OpenWindow(Window.BestPenaltyMenu, gameObject);
+            AppManager.CurrentGameType = GameType.BP;
         });
 
         footballRulesBtn.onClick.AddListener(() =>
