@@ -31,7 +31,7 @@ public class Switcher : MonoBehaviour
     private AudioSource targetSource;
     [SerializeField] string targetSourceName;
 
-    public static bool VibraEnabled { get; private set; }
+    public static bool VibraEnabled { get; set; }
 
     private void Awake()
     {
