@@ -13,20 +13,20 @@ public class BPGame : MonoBehaviour
 
     private void OnEnable()
     {
-        BootPlayer.OnCollided += OnCollidedEvent;
+        BallPenalty.OnTravelled += OnTravelldEvent;
     }
 
     private void OnDestroy()
     {
-        BootPlayer.OnCollided -= OnCollidedEvent;
+        BallPenalty.OnTravelled -= OnTravelldEvent;
     }
 
-    private void OnCollidedEvent()
+    private void OnTravelldEvent()
     {
         scoreText.text = $"{++score}";
 
-        ScoreUtility.CurrentScore = score;
-        ScoreUtility.BestScore = score;
+        //ScoreUtility.CurrentScore = score;
+        //ScoreUtility.BestScore = score;
     }
 
     private void Start()
