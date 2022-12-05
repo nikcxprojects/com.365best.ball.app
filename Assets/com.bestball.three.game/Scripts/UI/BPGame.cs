@@ -10,6 +10,7 @@ public class BPGame : MonoBehaviour
 
     [Space(10)]
     [SerializeField] Text scoreText;
+    [SerializeField] GameObject VFX;
 
     private void OnEnable()
     {
@@ -36,6 +37,8 @@ public class BPGame : MonoBehaviour
 
     private void Start()
     {
+        VFX.SetActive(true);
+
         pauseBtn.onClick.AddListener(() =>
         {
             UIManager.OpenWindow(Window.Pause);
