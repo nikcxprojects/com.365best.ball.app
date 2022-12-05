@@ -14,7 +14,7 @@ public class BallPenalty : MonoBehaviour
     private GameObject Shadow { get; set; }
 
     private const float totalDistance = 4.0f;
-    private const float force = 10;
+    private const float force = 20;
 
     private static Rigidbody2D Rigidbody { get; set; }
     private static Vector2 Velocity { get; set; }
