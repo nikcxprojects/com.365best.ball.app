@@ -11,8 +11,10 @@ public class BallPenalty : MonoBehaviour
     private Transform Center { get; set; }
     private Transform Target { get; set; }
 
+    private GameObject Shadow { get; set; }
+
     private const float totalDistance = 4.0f;
-    private const float force = 8;
+    private const float force = 10;
 
     private static Rigidbody2D Rigidbody { get; set; }
     private static Vector2 Velocity { get; set; }
@@ -36,6 +38,7 @@ public class BallPenalty : MonoBehaviour
     {
         Center = GameObject.Find("center").transform;
         Target = GameObject.Find("target").transform;
+        Shadow = GameObject.Find("shadow");
 
         Rigidbody = GetComponent<Rigidbody2D>();
 
@@ -48,6 +51,8 @@ public class BallPenalty : MonoBehaviour
         {
             return;
         }
+
+        Shadow.SetActive(false);
 
         Target.position = new Vector2(Random.Range(-2.21f, 2.21f), Random.Range(-0.5f, 1.72f));
         Vector2 direction = Target.position - transform.position;
@@ -85,6 +90,7 @@ public class BallPenalty : MonoBehaviour
     private void ResetMe()
     {
         EndTravel = false;
+        Shadow.SetActive(true);
 
         Rigidbody.velocity = Vector2.zero;
         Rigidbody.angularVelocity = 0;
