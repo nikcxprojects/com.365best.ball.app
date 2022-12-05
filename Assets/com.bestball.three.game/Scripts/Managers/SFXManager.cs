@@ -12,11 +12,6 @@ public class SFXManager : MonoBehaviour
     {
         BootPlayer.OnCollided += () =>
         {
-            if(Switcher.VibraEnabled)
-            {
-                Handheld.Vibrate();
-            }
-
             if (sfxSource.isPlaying)
             {
                 sfxSource.Stop();

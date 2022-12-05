@@ -27,6 +27,11 @@ public class GBGame : MonoBehaviour
 
     private void OnCollidedEvent()
     {
+        if (Switcher.VibraEnabled)
+        {
+            Handheld.Vibrate();
+        }
+
         scoreText.text = $"{++score}";
 
         ScoreUtility.CurrentScore = score;

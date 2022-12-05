@@ -23,6 +23,11 @@ public class BPGame : MonoBehaviour
 
     private void OnTravelldEvent()
     {
+        if(Switcher.VibraEnabled)
+        {
+            Handheld.Vibrate();
+        }
+
         scoreText.text = $"{++score}";
 
         //ScoreUtility.CurrentScore = score;
@@ -41,6 +46,9 @@ public class BPGame : MonoBehaviour
             UIManager.OpenWindow(Window.Settings);
             Settings.UpdateOptions(false, true, false);
         });
+
+        Transform parent = GameObject.Find("Environment").transform;
+        InstantiateUtility.Spawn<BallPenalty>("ball penalty", Vector2.zero, Quaternion.identity, parent);
     }
 
     public static void GameOver()
