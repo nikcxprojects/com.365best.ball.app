@@ -10,13 +10,13 @@ public static class ScoreUtility
 
     public static int BestScore
     {
-        get => PlayerPrefs.GetInt($"SCORE:{AppManager.CurrentGameType}", 0);
+        get => PlayerPrefs.GetInt($"BEST SCORE:{AppManager.CurrentGameType}", 0);
 
         set
         {
             if(CurrentScore > BestScore)
             {
-                PlayerPrefs.SetInt($"SCORE:{AppManager.CurrentGameType}", CurrentScore);
+                PlayerPrefs.SetInt($"BEST SCORE:{AppManager.CurrentGameType}", CurrentScore);
                 PlayerPrefs.Save();
             }
         }
