@@ -1,6 +1,6 @@
-public class GameType
+public static class GameType
 {
-    public static string GB { get => "GB"; }
-    public static string BP { get => "BP"; }
-    public static string SM { get => "SM"; }
+    public const string GB = "GB";
+    public const string BP = "BP"; 
+    public const string SM = "SM"; 
 }

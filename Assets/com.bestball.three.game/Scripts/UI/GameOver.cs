@@ -18,7 +18,12 @@ public class GameOver : MonoBehaviour
         FindObjectOfType<SFXManager>().GameOver();
         restartBtn.onClick.AddListener(() =>
         {
-            UIManager.OpenWindow(Window.GBGame);
+            UIManager.OpenWindow(AppManager.CurrentGameType switch
+            {
+                GameType.GB => Window.GBGame,
+                GameType.BP => Window.BPGame,
+            });
+
             Destroy(gameObject);
         });
 
