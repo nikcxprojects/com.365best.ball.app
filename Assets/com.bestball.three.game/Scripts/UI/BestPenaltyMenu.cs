@@ -17,7 +17,7 @@ public class BestPenaltyMenu : MonoBehaviour, IMenu
 
         startBtn.onClick.AddListener(() =>
         {
-            UIManager.OpenWindow(Window.GBGame, gameObject);
+            UIManager.OpenWindow(Window.BPGame, gameObject);
         });
 
         equipmentBtn.onClick.AddListener(() =>

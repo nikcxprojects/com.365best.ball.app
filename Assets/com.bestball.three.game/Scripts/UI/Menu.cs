@@ -23,7 +23,7 @@ public class Menu : MonoBehaviour
             AppManager.CurrentGameType = GameType.GB;
         });
 
-        goldenBoots.onClick.AddListener(() =>
+        bestPenalty.onClick.AddListener(() =>
         {
             UIManager.OpenWindow(Window.BestPenaltyMenu, gameObject);
             AppManager.CurrentGameType = GameType.BP;
