@@ -22,7 +22,7 @@ public class BestPenaltyMenu : MonoBehaviour, IMenu
 
         equipmentBtn.onClick.AddListener(() =>
         {
-            UIManager.OpenWindow(Window.GBEquip);
+            UIManager.OpenWindow(Window.BPEquip);
         });
 
         settingsBtn.onClick.AddListener(() =>
@@ -40,7 +40,7 @@ public class BestPenaltyMenu : MonoBehaviour, IMenu
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !Settings.IsOpened && !GBEquip.IsEquip)
+        if (Input.GetKeyDown(KeyCode.Escape) && !Settings.IsOpened && !AppManager.IsEquip)
         {
             UIManager.OpenWindow(Window.Menu, gameObject);
         }

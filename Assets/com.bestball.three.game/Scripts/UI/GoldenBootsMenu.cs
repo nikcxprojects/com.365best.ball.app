@@ -38,7 +38,7 @@ public class GoldenBootsMenu : MonoBehaviour, IMenu
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape) && !Settings.IsOpened && !GBEquip.IsEquip)
+        if(Input.GetKeyDown(KeyCode.Escape) && !Settings.IsOpened && !AppManager.IsEquip)
         {
             UIManager.OpenWindow(Window.Menu, gameObject);
         }

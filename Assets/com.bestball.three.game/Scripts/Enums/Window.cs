@@ -11,6 +11,7 @@ public class Window
     public static string GoldenBootsMenu { get => "Golden Boots Menu"; }
     public static string BestPenaltyMenu { get => "Best Penalty Menu"; }
     public static string GBEquip { get => "GB EQUIP"; }
+    public static string BPEquip { get => "BP EQUIP"; }
     public static string Boots { get => "Boots"; }
     public static string Balls { get => "Balls"; }
     public static string Shirts { get => "Shirts"; }

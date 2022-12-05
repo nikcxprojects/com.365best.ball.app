@@ -2,14 +2,12 @@ using UnityEngine.UI;
 using UnityEngine;
 using System.Linq;
 
-public class GBEquip : MonoBehaviour
+public class BPEquip : MonoBehaviour
 {
     [Space(10)]
-    [SerializeField] Transform bootsHover;
     [SerializeField] Transform ballsHover;
 
     [Space(10)]
-    [SerializeField] Transform boots;
     [SerializeField] Transform balls;
 
     [Space(10)]
@@ -27,21 +25,6 @@ public class GBEquip : MonoBehaviour
 
     private void Start()
     {
-        bootsHover.transform.position = boots.GetChild(PlayerPrefs.GetInt(Boots.BootsKey)).position;
-
-        foreach (Transform boot in boots)
-        {
-            boot.GetComponent<Button>().onClick.AddListener(() =>
-            {
-                bootsHover.position = boot.position;
-
-                PlayerPrefs.SetInt(Boots.BootsKey, boot.GetSiblingIndex());
-                PlayerPrefs.Save();
-
-                FindObjectsOfType<MonoBehaviour>().OfType<IMenu>().FirstOrDefault().UpdateMenuIcons();
-            });
-        }
-
         ballsHover.transform.position = balls.GetChild(PlayerPrefs.GetInt(Balls.BallKey)).position;
 
         foreach (Transform ball in balls)
@@ -53,7 +36,7 @@ public class GBEquip : MonoBehaviour
                 PlayerPrefs.SetInt(Balls.BallKey, ball.GetSiblingIndex());
                 PlayerPrefs.Save();
 
-                FindObjectsOfType<MonoBehaviour>().OfType<IMenu>().FirstOrDefault().UpdateMenuIcons();
+                FindObjectsOfType<MonoBehaviour>().OfType<IMenu>().FirstOrDefault()?.UpdateMenuIcons();
             });
         }
 

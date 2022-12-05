@@ -15,9 +15,20 @@ public class BallPenalty : MonoBehaviour
     private const float force = 8;
 
     private Rigidbody2D Rigidbody { get; set; }
+    private static SpriteRenderer SpriteRenderer { get; set; }
 
     private bool EndTravel { get; set; }
     public static Action OnTravelled { get; set; }
+
+    private void Awake()
+    {
+        SpriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    private void OnEnable()
+    {
+        UpdateRender();
+    }
 
     private void Start()
     {
@@ -31,7 +42,7 @@ public class BallPenalty : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if(Rigidbody.velocity.sqrMagnitude > 0)
+        if(Rigidbody.velocity.sqrMagnitude > 0 || Settings.IsOpened || AppManager.IsEquip)
         {
             return;
         }
@@ -63,6 +74,11 @@ public class BallPenalty : MonoBehaviour
         Rigidbody.angularVelocity = 0;
 
         transform.position = new Vector2(0, -2.699363f);
+    }
+
+    private static void UpdateRender()
+    {
+        SpriteRenderer.sprite = Resources.Load<Sprite>($"Balls/{PlayerPrefs.GetInt(Balls.BallKey)}");
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

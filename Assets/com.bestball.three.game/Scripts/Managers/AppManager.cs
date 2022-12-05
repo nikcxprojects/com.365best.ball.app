@@ -4,6 +4,8 @@ public class AppManager : MonoBehaviour
 {
     public static string CurrentGameType { get; set; }
 
+    public static bool IsEquip { get; set; }
+
     private void Awake()
     {
         if(!PlayerPrefs.HasKey("music"))
