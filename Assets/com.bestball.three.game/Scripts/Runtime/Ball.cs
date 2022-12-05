@@ -14,7 +14,7 @@ public class Ball : MonoBehaviour
 
     private void OnEnable()
     {
-        UpdateBall();
+        UpdateRender();
     }
 
     public static void Sleep()
@@ -28,10 +28,10 @@ public class Ball : MonoBehaviour
         Rigidbody2D.WakeUp();
         Rigidbody2D.velocity = Velocity;
 
-        UpdateBall();
+        UpdateRender();
     }
 
-    private static void UpdateBall()
+    private static void UpdateRender()
     {
         SpriteRenderer.sprite = Resources.Load<Sprite>($"Balls/{PlayerPrefs.GetInt(Balls.BallKey)}");
     }

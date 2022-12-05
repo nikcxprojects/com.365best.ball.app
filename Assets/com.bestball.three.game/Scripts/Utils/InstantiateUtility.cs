@@ -1,8 +1,8 @@
 using UnityEngine;
 public static class InstantiateUtility
 {
-    public static void Spawn<T>(string objectName, Vector2 postion, Quaternion rotation, Transform parent) where T : MonoBehaviour
+    public static T Spawn<T>(string objectName, Vector2 postion, Quaternion rotation, Transform parent) where T : MonoBehaviour
     {
-        Object.Instantiate(Resources.Load<T>(objectName), postion, rotation, parent);
+        return Object.Instantiate(Resources.Load<T>(objectName), postion, rotation, parent);
     }
 }
