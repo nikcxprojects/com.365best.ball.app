@@ -7,7 +7,9 @@ public class GameOver : MonoBehaviour
 
     private void OnEnable()
     {
-        gameObject.SetLandscape(LandscapeUtility.GetLandscape(AppManager.CurrentGameType));
+        var landscapeTemplate = LandscapeUtility.GetLandscape(AppManager.CurrentGameType);
+        var canvasRef = gameObject.SetLandscape(landscapeTemplate);
+        canvasRef.overrideSorting = false;
     }
 
     private void Start()

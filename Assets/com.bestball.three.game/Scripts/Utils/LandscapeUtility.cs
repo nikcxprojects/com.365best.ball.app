@@ -2,8 +2,8 @@ using UnityEngine;
 
 public static class LandscapeUtility
 {
-    public static GameObject GetLandscape(string gameType)
+    public static Canvas GetLandscape(string gameType)
     {
-        return Resources.Load<GameObject>($"Landscapes{gameType}");
+        return Resources.Load<Canvas>($"Landscapes/{gameType}");
     }
 }

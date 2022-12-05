@@ -14,6 +14,10 @@ public class GBGame : MonoBehaviour
     private void OnEnable()
     {
         BootPlayer.OnCollided += OnCollidedEvent;
+
+        var landscapeTemplate = LandscapeUtility.GetLandscape(AppManager.CurrentGameType);
+        var canvasRef = gameObject.SetLandscape(landscapeTemplate);
+        canvasRef.overrideSorting = true;
     }
 
     private void OnDestroy()
@@ -39,6 +43,7 @@ public class GBGame : MonoBehaviour
         settingsBtn.onClick.AddListener(() =>
         {
             UIManager.OpenWindow(Window.Settings);
+            Settings.UpdateOptions(true, true, false);
         });
 
         Transform parent = GameObject.Find("Environment").transform;
@@ -46,8 +51,6 @@ public class GBGame : MonoBehaviour
         Ball ballRef = InstantiateUtility.Spawn<Ball>("ball", Vector2.up * 6, Quaternion.identity, parent);
         InstantiateUtility.Spawn<BootPlayer>("boot player", Vector2.down * 3.688f, Quaternion.identity, parent);
         InstantiateUtility.Spawn<OverZone>("over zone", Vector2.down * 5, Quaternion.identity, parent);
-
-        gameObject.SetLandscape(LandscapeUtility.GetLandscape(GameType.GB));
 
         BootPlayer.BallRef = ballRef;
     }

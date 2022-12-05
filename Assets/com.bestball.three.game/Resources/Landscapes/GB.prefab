@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 1613101797304327880}
   - component: {fileID: 5842121132267518540}
   - component: {fileID: 8541163687553303262}
-  - component: {fileID: 3077455885297193545}
+  - component: {fileID: 2759642285731214374}
   m_Layer: 0
   m_Name: GB
   m_TagString: Untagged
@@ -153,7 +153,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!223 &3077455885297193545
+--- !u!223 &2759642285731214374
 Canvas:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -172,7 +172,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: -6
+  m_SortingOrder: -666
   m_TargetDisplay: 0
 --- !u!1 &6318681197909838773
 GameObject:
