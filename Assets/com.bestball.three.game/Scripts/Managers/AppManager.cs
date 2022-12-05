@@ -6,6 +6,8 @@ public class AppManager : MonoBehaviour
 
     public static bool IsEquip { get; set; }
 
+    public static bool IsPause { get; set; }
+
     private void Awake()
     {
         if(!PlayerPrefs.HasKey("music"))

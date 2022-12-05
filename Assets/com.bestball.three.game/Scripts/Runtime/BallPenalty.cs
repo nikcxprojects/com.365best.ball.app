@@ -44,7 +44,7 @@ public class BallPenalty : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if(Rigidbody.velocity.sqrMagnitude > 0 || Settings.IsOpened || AppManager.IsEquip)
+        if(Rigidbody.velocity.sqrMagnitude > 0 || Settings.IsOpened || AppManager.IsEquip || AppManager.IsPause)
         {
             return;
         }
@@ -94,6 +94,7 @@ public class BallPenalty : MonoBehaviour
 
     private static void UpdateRender()
     {
+        Debug.Log("1");
         SpriteRenderer.sprite = Resources.Load<Sprite>($"Balls/{PlayerPrefs.GetInt(Balls.BallKey)}");
     }
 

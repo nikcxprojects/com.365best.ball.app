@@ -10,6 +10,13 @@ public class Pause : MonoBehaviour
         var landscapeTemplate = LandscapeUtility.GetLandscape(AppManager.CurrentGameType);
         var canvasRef = gameObject.SetLandscape(landscapeTemplate);
         canvasRef.overrideSorting = false;
+
+        AppManager.IsPause = true;
+    }
+
+    private void OnDestroy()
+    {
+        AppManager.IsPause = false;
     }
 
     private void Start()
@@ -26,6 +33,11 @@ public class Pause : MonoBehaviour
 
         resumeBtn.onClick.AddListener(() =>
         {
+            if (FindObjectOfType<Ball>() != null)
+            {
+                Ball.WakeUp();
+            }
+
             if (FindObjectOfType<BallPenalty>() != null)
             {
                 BallPenalty.WakeUp();
