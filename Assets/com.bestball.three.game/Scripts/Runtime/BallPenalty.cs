@@ -73,5 +73,6 @@ public class BallPenalty : MonoBehaviour
         }
 
         UIManager.OpenWindow(Window.GameOver);
+        BPGame.GameOver();
     }
 }

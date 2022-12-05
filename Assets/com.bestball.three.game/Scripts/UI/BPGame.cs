@@ -45,9 +45,7 @@ public class BPGame : MonoBehaviour
 
     public static void GameOver()
     {
-        //Destroy(FindObjectOfType<GBGame>().gameObject);
-        //Destroy(FindObjectOfType<BootPlayer>().gameObject);
-        //Destroy(FindObjectOfType<OverZone>().gameObject);
-        //Destroy(FindObjectOfType<Ball>().gameObject);
+        Destroy(FindObjectOfType<BPGame>().gameObject);
+        Destroy(FindObjectOfType<BallPenalty>().gameObject);
     }
 }
