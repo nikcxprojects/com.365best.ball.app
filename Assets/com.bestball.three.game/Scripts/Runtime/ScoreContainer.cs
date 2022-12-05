@@ -8,11 +8,11 @@ public class ScoreContainer : MonoBehaviour
     {
         if (string.Equals(key, "CurrentScore"))
         {
-            GetComponent<Text>().text = $"SCORE:{AppManager.CurrentGameType}";
+            GetComponent<Text>().text = $"{ScoreUtility.CurrentScore}";
         }
         else
         {
-            GetComponent<Text>().text = $"BEST SCORE:{AppManager.CurrentGameType}";
+            GetComponent<Text>().text = $"{ScoreUtility.BestScore}";
         }
     }
 }
