@@ -21,7 +21,7 @@ public class GoldenBootsMenu : MonoBehaviour, IMenu
     {
         startBtn.onClick.AddListener(() =>
         {
-            UIManager.OpenWindow(Window.Game, gameObject);
+            UIManager.OpenWindow(Window.GBGame, gameObject);
         });
 
         equipmentBtn.onClick.AddListener(() =>

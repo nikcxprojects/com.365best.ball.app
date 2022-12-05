@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2483237300421110274}
   - component: {fileID: 2480831367005180969}
   m_Layer: 0
-  m_Name: Game
+  m_Name: GBGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -398,7 +398,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 29
+  m_Text: 0
 --- !u!1 &2483237302358298468
 GameObject:
   m_ObjectHideFlags: 0
