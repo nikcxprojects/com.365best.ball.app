@@ -66,7 +66,7 @@ public class BootPlayer : MonoBehaviour
         OnCollided?.Invoke();
     }
 
-    private static void UpdateRender()
+    public static void UpdateRender()
     {
         SpriteRenderer.sprite = Resources.Load<Sprite>($"Boots/{PlayerPrefs.GetInt(Boots.BootsKey)}");
     }

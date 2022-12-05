@@ -55,6 +55,7 @@ public class Settings : MonoBehaviour
             if (FindObjectOfType<Ball>() != null)
             {
                 Ball.WakeUp();
+                BootPlayer.UpdateRender();
             }
 
             Destroy(gameObject);

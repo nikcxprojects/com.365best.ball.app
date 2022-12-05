@@ -10,15 +10,15 @@ public class SFXManager : MonoBehaviour
 
     private void Awake()
     {
-        //Player.OnCollided += () =>
-        //{
-        //    if (sfxSource.isPlaying)
-        //    {
-        //        sfxSource.Stop();
-        //    }
+        BootPlayer.OnCollided += () =>
+        {
+            if (sfxSource.isPlaying)
+            {
+                sfxSource.Stop();
+            }
 
-        //    sfxSource.PlayOneShot(hitClip);
-        //};
+            sfxSource.PlayOneShot(hitClip);
+        };
     }
 
     public void GameOver()

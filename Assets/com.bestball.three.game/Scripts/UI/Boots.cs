@@ -30,7 +30,7 @@ public class Boots : MonoBehaviour
                 PlayerPrefs.SetInt(BootsKey, boot.GetSiblingIndex());
                 PlayerPrefs.Save();
 
-                FindObjectsOfType<MonoBehaviour>().OfType<IMenu>().FirstOrDefault().UpdateMenuIcons();
+                FindObjectsOfType<MonoBehaviour>().OfType<IMenu>().FirstOrDefault()?.UpdateMenuIcons();
             });
         }
     }
