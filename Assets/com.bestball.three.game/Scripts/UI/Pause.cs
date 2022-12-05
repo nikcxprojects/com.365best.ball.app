@@ -19,11 +19,16 @@ public class Pause : MonoBehaviour
             Ball.Sleep();
         }
 
+        if (FindObjectOfType<BallPenalty>() != null)
+        {
+            BallPenalty.Sleep();
+        }
+
         resumeBtn.onClick.AddListener(() =>
         {
-            if (FindObjectOfType<Ball>() != null)
+            if (FindObjectOfType<BallPenalty>() != null)
             {
-                Ball.WakeUp();
+                BallPenalty.WakeUp();
             }
 
             Destroy(gameObject);

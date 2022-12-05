@@ -14,7 +14,9 @@ public class BallPenalty : MonoBehaviour
     private const float totalDistance = 4.0f;
     private const float force = 8;
 
-    private Rigidbody2D Rigidbody { get; set; }
+    private static Rigidbody2D Rigidbody { get; set; }
+    private static Vector2 Velocity { get; set; }
+
     private static SpriteRenderer SpriteRenderer { get; set; }
 
     private bool EndTravel { get; set; }
@@ -64,6 +66,20 @@ public class BallPenalty : MonoBehaviour
         }
 
         transform.localScale = Vector2.Lerp(TargetScale, InitScale, distanceToGoal / totalDistance);
+    }
+
+    public static void Sleep()
+    {
+        Velocity = Rigidbody.velocity;
+        Rigidbody.Sleep();
+    }
+
+    public static void WakeUp()
+    {
+        Rigidbody.WakeUp();
+        Rigidbody.velocity = Velocity;
+
+        UpdateRender();
     }
 
     private void ResetMe()
