@@ -1,18 +1,20 @@
 using UnityEngine.UI;
 using UnityEngine;
 
-public class GoldenBootsMenu : MonoBehaviour, IMenu
+public class BestPenaltyMenu : MonoBehaviour, IMenu
 {
     [SerializeField] Button startBtn;
     [SerializeField] Button equipmentBtn;
     [SerializeField] Button settingsBtn;
 
     [Space(10)]
-    [SerializeField] Image currentBoots;
     [SerializeField] Image currentBall;
+    [SerializeField] GameObject VFX;
 
     private void Start()
     {
+        VFX.SetActive(true);
+
         startBtn.onClick.AddListener(() =>
         {
             UIManager.OpenWindow(Window.GBGame, gameObject);
@@ -38,7 +40,7 @@ public class GoldenBootsMenu : MonoBehaviour, IMenu
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape) && !Settings.IsOpened && !GBEquip.IsEquip)
+        if (Input.GetKeyDown(KeyCode.Escape) && !Settings.IsOpened && !GBEquip.IsEquip)
         {
             UIManager.OpenWindow(Window.Menu, gameObject);
         }
@@ -46,7 +48,6 @@ public class GoldenBootsMenu : MonoBehaviour, IMenu
 
     public void UpdateMenuIcons()
     {
-        currentBoots.sprite = Resources.Load<Sprite>($"Boots/{PlayerPrefs.GetInt(Boots.BootsKey)}");
         currentBall.sprite = Resources.Load<Sprite>($"Balls/{PlayerPrefs.GetInt(Balls.BallKey)}");
     }
 }

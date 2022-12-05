@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class GameOver : MonoBehaviour
 {
     [SerializeField] Button restartBtn;
+    [SerializeField] Button menuBtn;
 
     private void OnEnable()
     {
@@ -19,6 +20,11 @@ public class GameOver : MonoBehaviour
         {
             UIManager.OpenWindow(Window.GBGame);
             Destroy(gameObject);
+        });
+
+        menuBtn.onClick.AddListener(() =>
+        {
+            UIManager.OpenWindow(Window.Menu, gameObject);
         });
     }
 }
