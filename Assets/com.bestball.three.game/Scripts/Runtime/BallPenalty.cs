@@ -100,7 +100,6 @@ public class BallPenalty : MonoBehaviour
 
     private static void UpdateRender()
     {
-        Debug.Log("1");
         SpriteRenderer.sprite = Resources.Load<Sprite>($"Balls/{PlayerPrefs.GetInt(Balls.BallKey)}");
     }
 
