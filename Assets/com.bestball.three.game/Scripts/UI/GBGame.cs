@@ -40,6 +40,8 @@ public class GBGame : MonoBehaviour
 
     private void Start()
     {
+        ScoreUtility.CurrentScore = score;
+
         pauseBtn.onClick.AddListener(() =>
         {
             UIManager.OpenWindow(Window.Pause);

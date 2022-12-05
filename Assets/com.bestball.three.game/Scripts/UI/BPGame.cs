@@ -31,13 +31,14 @@ public class BPGame : MonoBehaviour
 
         scoreText.text = $"{++score}";
 
-        //ScoreUtility.CurrentScore = score;
-        //ScoreUtility.BestScore = score;
+        ScoreUtility.CurrentScore = score;
+        ScoreUtility.BestScore = score;
     }
 
     private void Start()
     {
         VFX.SetActive(true);
+        ScoreUtility.CurrentScore = score;
 
         pauseBtn.onClick.AddListener(() =>
         {
