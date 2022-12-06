@@ -63,10 +63,7 @@ public class Enemy : MonoBehaviour
 
         while(true)
         {
-            if (Settings.IsOpened || AppManager.IsEquip || AppManager.IsPause)
-            {
-                yield return null;
-            }
+            yield return new WaitWhile(() => Settings.IsOpened || AppManager.IsEquip || AppManager.IsPause);
 
             for (int i = 0; i < Sprites.Length; i++)
             {
@@ -82,17 +79,15 @@ public class Enemy : MonoBehaviour
     {
         while (true)
         {
-            if (Settings.IsOpened || AppManager.IsEquip || AppManager.IsPause)
-            {
-                yield return null;
-            }
-
+            yield return new WaitWhile(() => Settings.IsOpened || AppManager.IsEquip || AppManager.IsPause);
             yield return new WaitForSeconds(Random.Range(0.8f, 2.0f));
 
             float et = 0.0f;
             float followTime = Random.Range(0.5f, 1.5f);
             while (et < followTime)
             {
+                yield return new WaitWhile(() => Settings.IsOpened || AppManager.IsEquip || AppManager.IsPause);
+
                 Vector2 direction = Target.position - transform.position;
                 Rigidbody2D.AddForce(direction * force, ForceMode2D.Force);
 
