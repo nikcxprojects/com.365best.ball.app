@@ -3,8 +3,8 @@ using System.Collections;
 
 public class Enemy : MonoBehaviour
 {
-    private static Vector2 Velocity { get; set; }
-    private static Rigidbody2D Rigidbody2D { get; set; }
+    private Vector2 Velocity { get; set; }
+    private Rigidbody2D Rigidbody2D { get; set; }
     private static SpriteRenderer SpriteRenderer { get; set; }
     public static Transform Target { get; set; }
     private static Sprite[] Sprites { get; set; }
@@ -39,13 +39,13 @@ public class Enemy : MonoBehaviour
         Rigidbody2D.AddForce(direction * force, ForceMode2D.Force);
     }
 
-    public static void Sleep()
+    public  void Sleep()
     {
         Velocity = Rigidbody2D.velocity;
         Rigidbody2D.Sleep();
     }
 
-    public static void WakeUp()
+    public void WakeUp()
     {
         Rigidbody2D.WakeUp();
         Rigidbody2D.velocity = Velocity;

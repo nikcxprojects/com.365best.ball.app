@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class Settings : MonoBehaviour
@@ -41,9 +40,10 @@ public class Settings : MonoBehaviour
             BallPenalty.Sleep();
         }
 
-        if (FindObjectOfType<Enemy>() != null)
+        Enemy[] enemies = FindObjectsOfType<Enemy>();
+        foreach(Enemy e in enemies)
         {
-            Enemy.Sleep();
+            e.Sleep();
         }
 
         bootsBtn.onClick.AddListener(() =>
@@ -74,9 +74,10 @@ public class Settings : MonoBehaviour
                 BallPenalty.WakeUp();
             }
 
-            if(FindObjectOfType<Enemy>() != null)
+            Enemy[] enemies = FindObjectsOfType<Enemy>();
+            foreach (Enemy e in enemies)
             {
-                Enemy.WakeUp();
+                e.WakeUp();
             }
 
             Destroy(gameObject);
