@@ -4,6 +4,7 @@ using UnityEngine;
 public class SMGame : MonoBehaviour
 {
     private int score;
+    const int enemyCount = 3;
 
     [SerializeField] Button pauseBtn;
     [SerializeField] Button settingsBtn;
@@ -13,7 +14,7 @@ public class SMGame : MonoBehaviour
 
     private void OnEnable()
     {
-        BootPlayer.OnCollided += OnCollidedEvent;
+        BallPlayer.OnCollided += OnCollidedEvent;
 
         var landscapeTemplate = LandscapeUtility.GetLandscape(AppManager.CurrentGameType);
         var canvasRef = gameObject.SetLandscape(landscapeTemplate);
@@ -22,7 +23,7 @@ public class SMGame : MonoBehaviour
 
     private void OnDestroy()
     {
-        BootPlayer.OnCollided -= OnCollidedEvent;
+        BallPlayer.OnCollided -= OnCollidedEvent;
     }
 
     private void OnCollidedEvent()
@@ -55,18 +56,28 @@ public class SMGame : MonoBehaviour
 
         Transform parent = GameObject.Find("Environment").transform;
 
-        Ball ballRef = InstantiateUtility.Spawn<Ball>("ball", Vector2.up * 6, Quaternion.identity, parent);
-        InstantiateUtility.Spawn<BootPlayer>("boot player", Vector2.down * 3.688f, Quaternion.identity, parent);
-        InstantiateUtility.Spawn<OverZone>("over zone", Vector2.down * 5, Quaternion.identity, parent);
+        BallPlayer ballPlyerRef = InstantiateUtility.Spawn<BallPlayer>("ball player", Vector2.down * 3, Quaternion.identity, parent);
+        Instantiate(Resources.Load<GameObject>("goal sm"), Vector2.up * 2.2f, Quaternion.identity, parent);
 
-        BootPlayer.BallRef = ballRef;
+        for (int i = 0; i < enemyCount; i++)
+        {
+            Vector2 postion = new Vector2(Random.Range(-2.339f, 2.339f), Random.Range(1.84f, 2.346f));
+            InstantiateUtility.Spawn<Enemy>("enemy", postion, Quaternion.identity, parent);
+        }
+
+        Enemy.Target = ballPlyerRef.transform;
     }
 
     public static void GameOver()
     {
-        Destroy(FindObjectOfType<GBGame>().gameObject);
-        Destroy(FindObjectOfType<BootPlayer>().gameObject);
-        Destroy(FindObjectOfType<OverZone>().gameObject);
-        Destroy(FindObjectOfType<Ball>().gameObject);
+        Destroy(FindObjectOfType<BallPlayer>().gameObject);
+        Enemy[] enemies = FindObjectsOfType<Enemy>();
+        foreach (Enemy e in enemies)
+        {
+            Destroy(e.gameObject);
+        }
+
+        Destroy(GameObject.Find("goal sm(Clone)"));
+        Destroy(FindObjectOfType<SMGame>().gameObject);
     }
 }

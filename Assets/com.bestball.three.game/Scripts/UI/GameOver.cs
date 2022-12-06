@@ -22,6 +22,7 @@ public class GameOver : MonoBehaviour
             {
                 GameType.GB => Window.GBGame,
                 GameType.BP => Window.BPGame,
+                GameType.SM => Window.SMGame,
             });
 
             Destroy(gameObject);
