@@ -36,6 +36,8 @@ public class Loading : MonoBehaviour
             }
 
             statusText.text += letters[index];
+            index++;
+
             et += Time.deltaTime;
             yield return null;
         }
