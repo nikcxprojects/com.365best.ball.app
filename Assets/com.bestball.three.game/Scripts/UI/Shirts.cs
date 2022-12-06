@@ -28,8 +28,6 @@ public class Shirts : MonoBehaviour
 
                 PlayerPrefs.SetInt(ShirtKey, shirt.GetSiblingIndex());
                 PlayerPrefs.Save();
-
-                //FindObjectOfType<Menu>()?.UpdateMenuBall();
             });
         }
     }

@@ -13,6 +13,7 @@ public class Window
     public static string SpeedyMasterMenu { get => "Speedy Master Menu"; }
     public static string GBEquip { get => "GB EQUIP"; }
     public static string BPEquip { get => "BP EQUIP"; }
+    public static string SMEquip { get => "SM EQUIP"; }
     public static string Boots { get => "Boots"; }
     public static string Balls { get => "Balls"; }
     public static string Shirts { get => "Shirts"; }

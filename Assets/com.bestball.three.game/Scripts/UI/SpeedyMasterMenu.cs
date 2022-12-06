@@ -16,7 +16,7 @@ public class SpeedyMasterMenu : MonoBehaviour
 
         equipmentBtn.onClick.AddListener(() =>
         {
-            UIManager.OpenWindow(Window.GBEquip);
+            UIManager.OpenWindow(Window.SMEquip);
         });
 
         settingsBtn.onClick.AddListener(() =>
