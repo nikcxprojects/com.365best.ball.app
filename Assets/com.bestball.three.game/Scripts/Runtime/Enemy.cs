@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
     private static Vector2 Velocity { get; set; }
     private static Rigidbody2D Rigidbody2D { get; set; }
     private static SpriteRenderer SpriteRenderer { get; set; }
+    public static Transform Target { get; set; }
     private static Sprite[] Sprites { get; set; }
 
     private void Awake()

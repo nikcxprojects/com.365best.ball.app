@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class BallPlayer : MonoBehaviour
@@ -8,6 +9,8 @@ public class BallPlayer : MonoBehaviour
     private static SpriteRenderer SpriteRenderer { get; set; }
 
     private const float dragForce = 15.0f;
+
+    public static Action OnCollided { get; set; }
 
     private void Awake()
     {
@@ -57,6 +60,6 @@ public class BallPlayer : MonoBehaviour
             return;
         }
 
-        UIManager.OpenWindow(Window.GameOver, gameObject);
+        
     }
 }
