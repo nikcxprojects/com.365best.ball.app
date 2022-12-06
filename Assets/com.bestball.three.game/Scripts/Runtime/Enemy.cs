@@ -29,6 +29,11 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
+        if (Settings.IsOpened || AppManager.IsEquip || AppManager.IsPause)
+        {
+            return;
+        }
+
         Vector2 direction = Target.position - transform.position;
         transform.up = -direction;
     }
@@ -58,7 +63,12 @@ public class Enemy : MonoBehaviour
 
         while(true)
         {
-            for(int i = 0; i < Sprites.Length; i++)
+            if (Settings.IsOpened || AppManager.IsEquip || AppManager.IsPause)
+            {
+                yield return null;
+            }
+
+            for (int i = 0; i < Sprites.Length; i++)
             {
                 SpriteRenderer.sprite = Sprites[i];
                 yield return new WaitForSeconds(0.1f);
@@ -72,6 +82,11 @@ public class Enemy : MonoBehaviour
     {
         while (true)
         {
+            if (Settings.IsOpened || AppManager.IsEquip || AppManager.IsPause)
+            {
+                yield return null;
+            }
+
             yield return new WaitForSeconds(Random.Range(0.8f, 2.0f));
 
             float et = 0.0f;

@@ -13,6 +13,9 @@ public class BallPlayer : MonoBehaviour
     public static Action OnCollided { get; set; }
     public static Action OnLived { get; set; }
 
+    private float nextTime;
+    private const float scoreRate = 1;
+
     private void Awake()
     {
         Camera = Camera.main;
@@ -28,7 +31,11 @@ public class BallPlayer : MonoBehaviour
             return;
         }
 
-        OnLived?.Invoke();
+        if (Time.time > nextTime)
+        {
+            OnLived?.Invoke();
+            nextTime = Time.time + scoreRate;
+        }
     }
 
     private void OnEnable()
