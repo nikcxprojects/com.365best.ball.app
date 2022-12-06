@@ -1,5 +1,6 @@
 public class Window
 {
+    public static string Loading { get => "Loading"; }
     public static string Menu { get => "Menu"; }
     public static string Settings { get => "Settings"; }
     public static string GBGame { get => "GBGame"; }
