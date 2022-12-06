@@ -53,6 +53,7 @@ public class BallPenalty : MonoBehaviour
             return;
         }
 
+        Rigidbody.WakeUp();
         OnPressed?.Invoke();
         Shadow.SetActive(false);
 
@@ -98,6 +99,7 @@ public class BallPenalty : MonoBehaviour
         Rigidbody.angularVelocity = 0;
 
         transform.position = new Vector2(0, -2.699363f);
+        Rigidbody.Sleep();
     }
 
     private static void UpdateRender()

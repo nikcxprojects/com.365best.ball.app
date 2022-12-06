@@ -45,6 +45,7 @@ public class BPGame : MonoBehaviour
     private void SetRating()
     {
         SetRatingZero();
+        rating.gameObject.SetActive(true);
 
         int count = Random.Range(1, rating.childCount);
         for(int i = 0; i < count; i++)
@@ -64,17 +65,20 @@ public class BPGame : MonoBehaviour
     private void Start()
     {
         VFX.SetActive(true);
-        SetRatingZero();
+        rating.gameObject.SetActive(false);
 
         ScoreUtility.CurrentScore = score;
 
         pauseBtn.onClick.AddListener(() =>
         {
+            rating.gameObject.SetActive(false);
             UIManager.OpenWindow(Window.Pause);
         });
 
         settingsBtn.onClick.AddListener(() =>
         {
+            rating.gameObject.SetActive(false);
+
             UIManager.OpenWindow(Window.Settings);
             Settings.UpdateOptions(false, true, false);
         });
