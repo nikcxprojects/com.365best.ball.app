@@ -51,7 +51,7 @@ public class SMGame : MonoBehaviour
         settingsBtn.onClick.AddListener(() =>
         {
             UIManager.OpenWindow(Window.Settings);
-            Settings.UpdateOptions(true, true, false);
+            Settings.UpdateOptions(false, true, true);
         });
 
         Transform parent = GameObject.Find("Environment").transform;
