@@ -8,13 +8,15 @@ public class BallPlayer : MonoBehaviour
     private static Rigidbody2D Rigidbody2D { get; set; }
     private static SpriteRenderer SpriteRenderer { get; set; }
 
-    private const float dragForce = 15.0f;
+    private const float dragForce = 45.0f;
 
     public static Action OnCollided { get; set; }
     public static Action OnLived { get; set; }
 
     private float nextTime;
     private const float scoreRate = 1;
+
+    private Vector2 Direction { get; set; }
 
     private void Awake()
     {
@@ -38,6 +40,14 @@ public class BallPlayer : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+        if (Direction.sqrMagnitude > .1f)
+        {
+            Rigidbody2D.AddForce(Direction.normalized * dragForce, ForceMode2D.Force);
+        }
+    }
+
     private void OnEnable()
     {
         UpdateRender();
@@ -50,11 +60,7 @@ public class BallPlayer : MonoBehaviour
             return;
         }
 
-        Vector2 direction = Camera.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        if (direction.sqrMagnitude > .1f)
-        {
-            Rigidbody2D.AddForce(direction.normalized * dragForce, ForceMode2D.Force);
-        }
+        Direction = Camera.ScreenToWorldPoint(Input.mousePosition) - transform.position;
     }
 
     public static void Sleep()

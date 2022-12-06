@@ -9,7 +9,9 @@ public class Enemy : MonoBehaviour
     public static Transform Target { get; set; }
     private static Sprite[] Sprites { get; set; }
 
-    private const float force = 2.14f;
+    private Vector2 Direction { get; set; }
+
+    private const float force = 6.14f;
 
     private void Awake()
     {
@@ -36,6 +38,16 @@ public class Enemy : MonoBehaviour
 
         Vector2 direction = Target.position - transform.position;
         transform.up = -direction;
+    }
+
+    private void FixedUpdate()
+    {
+        if (Settings.IsOpened || AppManager.IsEquip || AppManager.IsPause)
+        {
+            return;
+        }
+
+        Rigidbody2D.AddForce(Direction * force, ForceMode2D.Force);
     }
 
     public  void Sleep()
@@ -88,8 +100,7 @@ public class Enemy : MonoBehaviour
             {
                 yield return new WaitWhile(() => Settings.IsOpened || AppManager.IsEquip || AppManager.IsPause);
 
-                Vector2 direction = Target.position - transform.position;
-                Rigidbody2D.AddForce(direction * force, ForceMode2D.Force);
+                Direction = Target.position - transform.position;
 
                 et += Time.deltaTime;
                 yield return null;
