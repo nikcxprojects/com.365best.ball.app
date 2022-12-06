@@ -26,26 +26,30 @@ public class Loading : MonoBehaviour
         float loadingTime = Random.Range(2.25f, 4.5f);
 
         int index = 0;
+        statusText.text = string.Empty;
         char[] letters = "Loading..".ToCharArray();
+
+        float timeOffset = 0.1f;
 
         while(et < loadingTime)
         {
             if(index > letters.Length - 1)
             {
                 index = 0;
+                statusText.text = string.Empty;
             }
 
             statusText.text += letters[index];
             index++;
 
-            et += Time.deltaTime;
-            yield return null;
+            et += timeOffset;
+            yield return new WaitForSeconds(timeOffset);
         }
 
         statusText.text = "PRESS TO CONTINUE";
         continueBtn.onClick.AddListener(() =>
         {
-            UIManager.OpenWindow(Window.Menu);
+            UIManager.OpenWindow(Window.Menu, gameObject);
         });
     }
 }
