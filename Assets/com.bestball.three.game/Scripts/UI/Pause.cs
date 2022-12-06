@@ -31,6 +31,17 @@ public class Pause : MonoBehaviour
             BallPenalty.Sleep();
         }
 
+        if (FindObjectOfType<BallPlayer>() != null)
+        {
+            BallPlayer.Sleep();
+        }
+
+        Enemy[] enemies = FindObjectsOfType<Enemy>();
+        foreach (Enemy e in enemies)
+        {
+            e.Sleep();
+        }
+
         resumeBtn.onClick.AddListener(() =>
         {
             if (FindObjectOfType<Ball>() != null)
@@ -41,6 +52,17 @@ public class Pause : MonoBehaviour
             if (FindObjectOfType<BallPenalty>() != null)
             {
                 BallPenalty.WakeUp();
+            }
+
+            if (FindObjectOfType<BallPlayer>() != null)
+            {
+                BallPlayer.WakeUp();
+            }
+
+            Enemy[] enemies = FindObjectsOfType<Enemy>();
+            foreach (Enemy e in enemies)
+            {
+                e.WakeUp();
             }
 
             Destroy(gameObject);
