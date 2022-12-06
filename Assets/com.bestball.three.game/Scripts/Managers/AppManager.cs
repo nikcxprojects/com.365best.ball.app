@@ -25,5 +25,9 @@ public class AppManager : MonoBehaviour
             PlayerPrefs.SetInt("vibration", 1);
             Switcher.VibraEnabled = true;
         }
+        else
+        {
+            Switcher.VibraEnabled = PlayerPrefs.GetInt("vibration") > 0;
+        }
     }
 }
