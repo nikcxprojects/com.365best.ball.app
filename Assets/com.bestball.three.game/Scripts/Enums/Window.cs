@@ -4,6 +4,7 @@ public class Window
     public static string Settings { get => "Settings"; }
     public static string GBGame { get => "GBGame"; }
     public static string BPGame { get => "BPGame"; }
+    public static string SMGame { get => "SMGame"; }
     public static string Pause { get => "Pause"; }
     public static string GameOver { get => "Game Over"; }
     public static string FootballRules { get => "FOOTBALL RULES"; }

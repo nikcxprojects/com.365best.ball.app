@@ -60,6 +60,7 @@ public class BallPlayer : MonoBehaviour
             return;
         }
 
-        
+        UIManager.OpenWindow(Window.GameOver);
+        SMGame.GameOver();
     }
 }

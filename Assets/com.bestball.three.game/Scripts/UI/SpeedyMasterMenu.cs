@@ -11,7 +11,7 @@ public class SpeedyMasterMenu : MonoBehaviour
     {
         startBtn.onClick.AddListener(() =>
         {
-            UIManager.OpenWindow(Window.GBGame, gameObject);
+            UIManager.OpenWindow(Window.SMGame, gameObject);
         });
 
         equipmentBtn.onClick.AddListener(() =>
