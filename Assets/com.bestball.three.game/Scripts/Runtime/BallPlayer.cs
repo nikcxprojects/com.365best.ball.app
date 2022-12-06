@@ -80,6 +80,7 @@ public class BallPlayer : MonoBehaviour
     {
         if(!collision.collider.CompareTag("over zone"))
         {
+            OnCollided?.Invoke();
             return;
         }
 
