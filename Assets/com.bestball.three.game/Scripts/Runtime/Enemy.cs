@@ -40,6 +40,7 @@ public class Enemy : MonoBehaviour
 
     private static void UpdateRender()
     {
+        Debug.Log($"Shirts/{PlayerPrefs.GetInt(Shirts.ShirtKey)}");
         Sprites = Resources.LoadAll<Sprite>($"Shirts/{PlayerPrefs.GetInt(Shirts.ShirtKey)}");
     }
 
