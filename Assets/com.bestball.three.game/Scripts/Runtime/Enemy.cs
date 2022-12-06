@@ -8,7 +8,8 @@ public class Enemy : MonoBehaviour
     private static SpriteRenderer SpriteRenderer { get; set; }
     public static Transform Target { get; set; }
     private static Sprite[] Sprites { get; set; }
-    [SerializeField] float force;
+
+    private const float force = 2.14f;
 
     private void Awake()
     {
