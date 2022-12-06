@@ -15,15 +15,21 @@ public class SMGame : MonoBehaviour
     private void OnEnable()
     {
         BallPlayer.OnCollided += OnCollidedEvent;
-
-        var landscapeTemplate = LandscapeUtility.GetLandscape(AppManager.CurrentGameType);
-        var canvasRef = gameObject.SetLandscape(landscapeTemplate);
-        canvasRef.overrideSorting = true;
+        BallPlayer.OnLived += OnLivedEvent;
     }
 
     private void OnDestroy()
     {
         BallPlayer.OnCollided -= OnCollidedEvent;
+        BallPlayer.OnLived -= OnLivedEvent;
+    }
+
+    private void OnLivedEvent()
+    {
+        scoreText.text = $"{++score}";
+
+        ScoreUtility.CurrentScore = score;
+        ScoreUtility.BestScore = score;
     }
 
     private void OnCollidedEvent()

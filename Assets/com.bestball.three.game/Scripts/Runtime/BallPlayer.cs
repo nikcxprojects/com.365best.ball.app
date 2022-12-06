@@ -11,6 +11,7 @@ public class BallPlayer : MonoBehaviour
     private const float dragForce = 15.0f;
 
     public static Action OnCollided { get; set; }
+    public static Action OnLived { get; set; }
 
     private void Awake()
     {
@@ -18,6 +19,16 @@ public class BallPlayer : MonoBehaviour
 
         Rigidbody2D = GetComponent<Rigidbody2D>();
         SpriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    private void Update()
+    {
+        if (Settings.IsOpened || AppManager.IsEquip || AppManager.IsPause)
+        {
+            return;
+        }
+
+        OnLived?.Invoke();
     }
 
     private void OnEnable()
