@@ -41,6 +41,11 @@ public class Settings : MonoBehaviour
             BallPenalty.Sleep();
         }
 
+        if (FindObjectOfType<Enemy>() != null)
+        {
+            Enemy.Sleep();
+        }
+
         bootsBtn.onClick.AddListener(() =>
         {
             UIManager.OpenWindow(Window.Boots);
@@ -67,6 +72,11 @@ public class Settings : MonoBehaviour
             if (FindObjectOfType<BallPenalty>() != null)
             {
                 BallPenalty.WakeUp();
+            }
+
+            if(FindObjectOfType<Enemy>() != null)
+            {
+                Enemy.WakeUp();
             }
 
             Destroy(gameObject);
