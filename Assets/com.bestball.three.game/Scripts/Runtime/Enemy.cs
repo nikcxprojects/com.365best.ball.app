@@ -61,7 +61,7 @@ public class Enemy : MonoBehaviour
             for(int i = 0; i < Sprites.Length; i++)
             {
                 SpriteRenderer.sprite = Sprites[i];
-                yield return new WaitForSeconds(0.25f);
+                yield return new WaitForSeconds(0.1f);
             }
 
             yield return null;
@@ -73,6 +73,7 @@ public class Enemy : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(Random.Range(0.8f, 2.0f));
+
             float et = 0.0f;
             float followTime = Random.Range(0.5f, 1.5f);
             while (et < followTime)

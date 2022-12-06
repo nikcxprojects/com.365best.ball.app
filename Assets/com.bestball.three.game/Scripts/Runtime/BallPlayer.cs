@@ -27,6 +27,11 @@ public class BallPlayer : MonoBehaviour
 
     private void OnMouseDrag()
     {
+        if (Settings.IsOpened || AppManager.IsEquip || AppManager.IsPause)
+        {
+            return;
+        }
+
         Vector2 direction = Camera.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         if (direction.sqrMagnitude > .1f)
         {

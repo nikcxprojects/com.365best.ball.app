@@ -40,6 +40,11 @@ public class Settings : MonoBehaviour
             BallPenalty.Sleep();
         }
 
+        if (FindObjectOfType<BallPlayer>() != null)
+        {
+            BallPlayer.Sleep();
+        }
+
         Enemy[] enemies = FindObjectsOfType<Enemy>();
         foreach(Enemy e in enemies)
         {
@@ -72,6 +77,11 @@ public class Settings : MonoBehaviour
             if (FindObjectOfType<BallPenalty>() != null)
             {
                 BallPenalty.WakeUp();
+            }
+
+            if (FindObjectOfType<BallPlayer>() != null)
+            {
+                BallPlayer.WakeUp();
             }
 
             Enemy[] enemies = FindObjectsOfType<Enemy>();
