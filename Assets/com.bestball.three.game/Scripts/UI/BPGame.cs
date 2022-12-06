@@ -12,6 +12,11 @@ public class BPGame : MonoBehaviour
     [SerializeField] Text scoreText;
     [SerializeField] GameObject VFX;
 
+    [Space(10)]
+    [SerializeField] Transform rating;
+    [SerializeField] Sprite fill;
+    [SerializeField] Sprite empty;
+
     private void OnEnable()
     {
         BallPenalty.OnTravelled += OnTravelldEvent;
@@ -33,11 +38,34 @@ public class BPGame : MonoBehaviour
 
         ScoreUtility.CurrentScore = score;
         ScoreUtility.BestScore = score;
+
+        SetRating();
+    }
+
+    private void SetRating()
+    {
+        SetRatingZero();
+
+        int count = Random.Range(1, rating.childCount);
+        for(int i = 0; i < count; i++)
+        {
+            rating.GetChild(i).GetComponent<Image>().sprite = fill;
+        }
+    }
+
+    private void SetRatingZero()
+    {
+        foreach(Transform t in rating)
+        {
+            t.GetComponent<Image>().sprite = empty;
+        }
     }
 
     private void Start()
     {
         VFX.SetActive(true);
+        SetRatingZero();
+
         ScoreUtility.CurrentScore = score;
 
         pauseBtn.onClick.AddListener(() =>
