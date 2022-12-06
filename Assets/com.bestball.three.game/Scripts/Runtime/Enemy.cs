@@ -33,12 +33,6 @@ public class Enemy : MonoBehaviour
         transform.up = -direction;
     }
 
-    private void FixedUpdate()
-    {
-        Vector2 direction = Target.position - transform.position;
-        Rigidbody2D.AddForce(direction * force, ForceMode2D.Force);
-    }
-
     public  void Sleep()
     {
         Velocity = Rigidbody2D.velocity;
@@ -60,6 +54,8 @@ public class Enemy : MonoBehaviour
 
     IEnumerator AnimationCycle()
     {
+        StartCoroutine(nameof(Following));
+
         while(true)
         {
             for(int i = 0; i < Sprites.Length; i++)
@@ -69,6 +65,24 @@ public class Enemy : MonoBehaviour
             }
 
             yield return null;
+        }
+    }
+
+    IEnumerator Following()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(Random.Range(0.8f, 2.0f));
+            float et = 0.0f;
+            float followTime = Random.Range(0.5f, 1.5f);
+            while (et < followTime)
+            {
+                Vector2 direction = Target.position - transform.position;
+                Rigidbody2D.AddForce(direction * force, ForceMode2D.Force);
+
+                et += Time.deltaTime;
+                yield return null;
+            }
         }
     }
 }
