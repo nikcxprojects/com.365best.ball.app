@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     private static SpriteRenderer SpriteRenderer { get; set; }
     public static Transform Target { get; set; }
     private static Sprite[] Sprites { get; set; }
+    [SerializeField] float force;
 
     private void Awake()
     {
@@ -23,6 +24,18 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         StartCoroutine(nameof(AnimationCycle));
+    }
+
+    private void Update()
+    {
+        Vector2 direction = Target.position - transform.position;
+        transform.up = -direction;
+    }
+
+    private void FixedUpdate()
+    {
+        Vector2 direction = Target.position - transform.position;
+        Rigidbody2D.AddForce(direction * force, ForceMode2D.Force);
     }
 
     public static void Sleep()
