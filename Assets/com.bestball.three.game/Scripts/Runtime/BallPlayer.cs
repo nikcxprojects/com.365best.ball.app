@@ -7,7 +7,7 @@ public class BallPlayer : MonoBehaviour
     private static Rigidbody2D Rigidbody2D { get; set; }
     private static SpriteRenderer SpriteRenderer { get; set; }
 
-    [SerializeField] float dragForce;
+    private const float dragForce = 15.0f;
 
     private void Awake()
     {
@@ -48,5 +48,15 @@ public class BallPlayer : MonoBehaviour
     private static void UpdateRender()
     {
         SpriteRenderer.sprite = Resources.Load<Sprite>($"Balls/{PlayerPrefs.GetInt(Balls.BallKey)}");
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(!collision.collider.CompareTag("over zone"))
+        {
+            return;
+        }
+
+        UIManager.OpenWindow(Window.GameOver, gameObject);
     }
 }
