@@ -5,6 +5,7 @@ public class Menu : MonoBehaviour
 {
     [SerializeField] Button goldenBoots;
     [SerializeField] Button bestPenalty;
+    [SerializeField] Button speedyMaster;
 
     [Space(10)]
     [SerializeField] Button footballRulesBtn;
@@ -27,6 +28,12 @@ public class Menu : MonoBehaviour
         {
             UIManager.OpenWindow(Window.BestPenaltyMenu, gameObject);
             AppManager.CurrentGameType = GameType.BP;
+        });
+
+        speedyMaster.onClick.AddListener(() =>
+        {
+            UIManager.OpenWindow(Window.SpeedyMasterMenu, gameObject);
+            AppManager.CurrentGameType = GameType.SM;
         });
 
         footballRulesBtn.onClick.AddListener(() =>
