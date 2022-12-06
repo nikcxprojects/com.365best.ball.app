@@ -25,7 +25,10 @@ public class BallPlayer : MonoBehaviour
     private void OnMouseDrag()
     {
         Vector2 direction = Camera.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        Rigidbody2D.AddForce(direction.normalized * dragForce, ForceMode2D.Force);
+        if (direction.sqrMagnitude > .1f)
+        {
+            Rigidbody2D.AddForce(direction.normalized * dragForce, ForceMode2D.Force);
+        }
     }
 
     public static void Sleep()
