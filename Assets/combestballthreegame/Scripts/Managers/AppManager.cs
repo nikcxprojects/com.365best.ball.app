@@ -29,5 +29,7 @@ public class AppManager : MonoBehaviour
         {
             Switcher.VibraEnabled = PlayerPrefs.GetInt("vibration") > 0;
         }
+
+        UIManager.OpenWindow(Window.Loading);
     }
 }
